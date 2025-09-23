@@ -6,10 +6,10 @@ EditorSettings:
   serializedVersion: 15
   m_SerializationMode: 2
   m_LineEndingsForNewScripts: 0
-  m_DefaultBehaviorMode: 0
+  m_DefaultBehaviorMode: 1
   m_PrefabRegularEnvironment: {fileID: 0}
   m_PrefabUIEnvironment: {fileID: 0}
-  m_SpritePackerMode: 0
+  m_SpritePackerMode: 5
   m_SpritePackerCacheSize: 10
   m_SpritePackerPaddingPower: 1
   m_Bc7TextureCompressor: 0
@@ -17,7 +17,7 @@ EditorSettings:
   m_EtcTextureFastCompressor: 1
   m_EtcTextureNormalCompressor: 2
   m_EtcTextureBestCompressor: 4
-  m_ProjectGenerationIncludedExtensions: txt;xml;fnt;cd;asmdef;rsp;asmref
+  m_ProjectGenerationIncludedExtensions: txt;xml;fnt;cd;asmdef;asmref;rsp
   m_ProjectGenerationRootNamespace: 
   m_EnableTextureStreamingInEditMode: 1
   m_EnableTextureStreamingInPlayMode: 1
@@ -32,7 +32,7 @@ EditorSettings:
   m_InspectorUseIMGUIDefaultInspector: 0
   m_UseLegacyProbeSampleCount: 0
   m_SerializeInlineMappingsOnOneLine: 1
-  m_DisableCookiesInLightmapper: 0
+  m_DisableCookiesInLightmapper: 1
   m_ShadowmaskStitching: 0
   m_AssetPipelineMode: 1
   m_RefreshImportMode: 0

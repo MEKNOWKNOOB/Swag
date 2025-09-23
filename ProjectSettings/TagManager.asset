@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,36 +41,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2472024963
+    locked: 0
+  - name: WalkInfront
+    uniqueID: 996203417
+    locked: 0
+  - name: Collision
+    uniqueID: 520651577
+    locked: 0
+  - name: Entity
+    uniqueID: 516411563
+    locked: 0
+  - name: WalkBehind
+    uniqueID: 186532719
+    locked: 0
+  - name: Decor
+    uniqueID: 1936656517
+    locked: 0
+  - name: Death
+    uniqueID: 2561910213
+    locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
