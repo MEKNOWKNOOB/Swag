@@ -2,18 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEditor;
+using Unity.Netcode;
 
-public class Entity : MonoBehaviour
+public class NetworkEntity : NetworkBehaviour
 {
-    // {<"RefName", EComponent>}
-    public Dictionary<string, EComponent> Components;
+    // {"RefName", NetworkComponent}
+    public Dictionary<string, NetworkComponent> NetworkComponents;
 
     // In Child Classes, override and call base.Start()
     protected virtual void Start()
     {
-        Components = new Dictionary<string, EComponent>();
-        
-        foreach (EComponent comp in gameObject.GetComponents<EComponent>())
+        NetworkComponents = new Dictionary<string, NetworkComponent>();
+
+        foreach (NetworkComponent comp in gameObject.GetComponents<NetworkComponent>())
         {
             // Error Checking ------------------------------------------------------------------
             if (string.IsNullOrEmpty(comp.RefName))
@@ -22,7 +23,7 @@ public class Entity : MonoBehaviour
                 EditorApplication.isPlaying = false;
                 return;
             }
-            if (Components.ContainsKey(comp.RefName))
+            if (NetworkComponents.ContainsKey(comp.RefName))
             {
                 Debug.LogError(gameObject + " found duplicate component");
                 EditorApplication.isPlaying = false;
@@ -30,7 +31,8 @@ public class Entity : MonoBehaviour
             }
             // ---------------------------------------------------------------------------------
 
-            Components.Add(comp.RefName, comp);
+            NetworkComponents.Add(comp.RefName, comp);
+            comp.Entity = this;
         }
     }
 }
