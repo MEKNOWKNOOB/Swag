@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: test_tile_set_1
+  m_Name: Test
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 2131358776, guid: 06b6a5ed3045b3d4986f80a2190bc73b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42c71b2abffec2c448dcc9e2c7cacca0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

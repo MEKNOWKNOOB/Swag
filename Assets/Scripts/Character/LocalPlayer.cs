@@ -26,6 +26,6 @@ public class LocalPlayer : NetworkEntity
     {
         if (!IsOwner) return;
 
-        ((Movement)NetworkComponents["Movement"]).Move(InputManager.instance.MoveVector);
+        ((Movement)NetworkComponents["Movement"]).Direction = InputManager.instance.MoveVector;
     }
 }

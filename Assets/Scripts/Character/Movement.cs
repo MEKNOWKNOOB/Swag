@@ -1,11 +1,18 @@
 using System;
+using NUnit.Framework;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Movement : NetworkComponent
 {
     [SerializeField] private float Speed = 5f;
-    private Rigidbody2D rb;
+    [NonSerialized] private Rigidbody2D rb;
+    [NonSerialized] public Vector2 Direction = new(0, 0);
+
+
+    // Network Sync Data
+    private NetworkVariable<Vector3> netPosition = new(writePerm: NetworkVariableWritePermission.Server);
 
     void Awake()
     {
@@ -13,9 +20,29 @@ public class Movement : NetworkComponent
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public override void OnNetworkSpawn()
+    {
+        netPosition.OnValueChanged += SyncPos;
+    }
+
     void Start()
     {
 
+    }
+
+    void Update()
+    {
+        // Sync Server Data to Client
+        if (IsServer)
+        {
+            netPosition.Value = transform.position;
+        }
+
+        // Client Side Update
+        if (IsOwner)
+        {
+            Move(Direction); ;
+        }
     }
 
     /// <summary>
@@ -23,8 +50,17 @@ public class Movement : NetworkComponent
     /// </summary>
     public Vector3 Move(Vector2 dir)
     {
+        if (dir == Vector2.zero)
+        {
+            return transform.position;
+        }
+
         // Instant Client Movement
-        rb.AddForce(dir * Speed, ForceMode2D.Impulse);
+        if (IsClient && !IsServer)
+        {
+            rb.AddForce(dir * Speed, ForceMode2D.Impulse);
+        }
+
         // Update Server
         SubmitMoveServerRpc(dir);
 
@@ -36,13 +72,14 @@ public class Movement : NetworkComponent
     {
         // Update Server Position
         rb.AddForce(dir * Speed, ForceMode2D.Impulse);
-        UpdateMoveClientRpc(transform.position);
+        netPosition.Value = transform.position;
     }
 
-    [ClientRpc]
-    private void UpdateMoveClientRpc(Vector3 newPos)
+    /// <summary>
+    /// Networking Delegate for netPos
+    /// </summary>
+    private void SyncPos(Vector3 prev, Vector3 curr)
     {
-        // Update Client Position - Lerp Smoothness and to Avoid Rubberbanding
-        transform.position = Vector3.Lerp(transform.position, newPos, 0.9f);
+        transform.position = curr;
     }
 }

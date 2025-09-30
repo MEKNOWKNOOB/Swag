@@ -67,7 +67,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_AssetsPPU: 16
   m_RefResolutionX: 320
   m_RefResolutionY: 180
-  m_CropFrame: 3
+  m_CropFrame: 1
   m_GridSnapping: 1
   m_FilterMode: 0
   m_UpscaleRT: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2960393494
+  GlobalObjectIdHash: 2428643919
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -407,12 +407,12 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 00000000831b589399db603b3983081fc5a5b398
   m_ShapePath:
   - {x: -0.5, y: -1, z: 0}
-  - {x: -0.21042883, y: -0.26948905, z: 0}
-  - {x: -0.3037331, y: 0.8037329, z: 0}
-  - {x: 0.2971909, y: 0.8233597, z: 0}
-  - {x: 0.17556286, y: -0.26948905, z: 0}
+  - {x: -0.20393813, y: -0.5940194, z: 0}
+  - {x: -0.20637405, y: -0.2542361, z: 0}
+  - {x: 0.23877537, y: -0.22811866, z: 0}
+  - {x: 0.24046898, y: -0.60051006, z: 0}
   - {x: 0.49999988, y: -1, z: 0}
-  m_ShapePathHash: -15652503
+  m_ShapePathHash: 2027560445
   m_InstanceId: 0
   m_ShadowShape2DComponent: {fileID: 0}
   m_ShadowShape2DProvider:
@@ -421,8 +421,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: -0.000000059604645, y: -0.088320136, z: 0}
-      m_Extent: {x: 0.49999994, y: 0.91167986, z: 0}
+      m_Center: {x: -0.000000059604645, y: -0.6140593, z: 0}
+      m_Extent: {x: 0.49999994, y: 0.38594067, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.05
     m_FlipX: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_PreviousTrimEdge: 0.05
   m_PreviousEdgeProcessing: 1
   m_PreviousShadowCastingSource: 1
-  m_PreviousShadowShape2DSource: {fileID: 2968430530130026614}
+  m_PreviousShadowShape2DSource: {fileID: 6101104389902802617}
   references:
     version: 2
     RefIds:
