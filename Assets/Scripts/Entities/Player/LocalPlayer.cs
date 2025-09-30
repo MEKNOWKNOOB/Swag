@@ -9,12 +9,9 @@ public class LocalPlayer : NetworkEntity
 
     public override void OnNetworkSpawn()
     {
-        if (!IsOwner)
-        {
-            GetComponentInChildren<Camera>().enabled = false;
-            GetComponentInChildren<AudioListener>().enabled = false;
-            return;
-        }
+        if (IsOwner) return;
+        GetComponentInChildren<Camera>().enabled = false;
+        GetComponentInChildren<AudioListener>().enabled = false;
     }
 
     void Update()

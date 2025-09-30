@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Movement : NetworkComponent
 {
-    [SerializeField] private float Speed = 5f;
+    [SerializeField] private float Speed = 1000f;
     [NonSerialized] private Rigidbody2D rb;
     [NonSerialized] public Vector2 Direction = new(0, 0);
 
@@ -58,7 +58,7 @@ public class Movement : NetworkComponent
         // Instant Client Movement
         if (IsClient && !IsServer)
         {
-            rb.AddForce(dir * Speed, ForceMode2D.Impulse);
+            rb.AddForce(dir * Speed * Time.deltaTime, ForceMode2D.Impulse);
         }
 
         // Update Server
@@ -71,7 +71,7 @@ public class Movement : NetworkComponent
     public void SubmitMoveServerRpc(Vector2 dir)
     {
         // Update Server Position
-        rb.AddForce(dir * Speed, ForceMode2D.Impulse);
+        rb.AddForce(dir * Speed * Time.deltaTime, ForceMode2D.Impulse);
         netPosition.Value = transform.position;
     }
 
