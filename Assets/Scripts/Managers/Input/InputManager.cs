@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [NonSerialized] public static InputManager instance;
+    public static InputManager Instance;
 
     [NonSerialized] private InputAction moveAction;
     [NonSerialized] private InputAction interactAction;
@@ -14,12 +14,12 @@ public class InputManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(this);
             return;
         }
-        instance = this;
+        Instance = this;
 
         moveAction = InputSystem.actions.FindAction("Move");
         interactAction = InputSystem.actions.FindAction("Interact");

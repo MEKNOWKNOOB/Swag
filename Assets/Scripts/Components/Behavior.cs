@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Behavior : NetworkComponent
@@ -7,13 +8,10 @@ public class Behavior : NetworkComponent
         RefName = "Movement";
     }
 
-    void Start()
+    public Vector2 PathFindToPos(Vector2 pos, Dictionary<int, int> heuristics)
     {
-        
-    }
-    
-    void Update()
-    {
-        
+
+
+        return Vector2.zero;
     }
 }

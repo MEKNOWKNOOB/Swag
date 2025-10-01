@@ -6,7 +6,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     // [NonSerialized] 
-    public static AudioManager instance;
+    public static AudioManager Instance;
 
     [Header("Audio System")]
     [SerializeField] private int sourceCount = 1;
@@ -21,12 +21,12 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(this);
             return;
         }
-        instance = this;
+        Instance = this;
 
         audioReference = new Dictionary<string, Audio>();
 
@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
-        AudioManager.instance.PlayLoop("Test", new Vector3(0,0,0), -0.8f);
+        AudioManager.Instance.PlayLoop("Test", new Vector3(0,0,0), -0.8f);
     }
 
 

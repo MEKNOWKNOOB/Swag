@@ -9,6 +9,8 @@ public class NetworkEntity : NetworkBehaviour
     // {"RefName", NetworkComponent}
     public Dictionary<string, NetworkComponent> NetworkComponents;
 
+    [SerializeField] new public Transform transform = null;
+
     // In Child Classes, override and call base.Start()
     protected virtual void Start()
     {
@@ -33,6 +35,11 @@ public class NetworkEntity : NetworkBehaviour
 
             NetworkComponents.Add(comp.RefName, comp);
             comp.Entity = this;
+        }
+
+        if (transform == null)
+        {
+            transform = base.transform;
         }
     }
 }

@@ -11,6 +11,7 @@ public class Movement : NetworkComponent
     [NonSerialized] public Vector2 Direction = new(0, 0);
 
 
+
     // Network Sync Data
     private NetworkVariable<Vector3> netPosition = new(writePerm: NetworkVariableWritePermission.Server);
 
@@ -41,9 +42,11 @@ public class Movement : NetworkComponent
         // Client Side Update
         if (IsOwner)
         {
-            Move(Direction); ;
+            Move(Direction);
         }
     }
+
+
 
     /// <summary>
     /// Handles Movement and Updates/Syncs Transform.Position
@@ -58,7 +61,7 @@ public class Movement : NetworkComponent
         // Instant Client Movement
         if (IsClient && !IsServer)
         {
-            rb.AddForce(dir * Speed * Time.deltaTime, ForceMode2D.Impulse);
+            rb.AddForce(Time.deltaTime * Speed * ((WorldTileset)WorldManager.Instance.NetworkComponents["Tileset"]).GetTileDataWalkSpeed("Ground", Entity.transform.position) * dir, ForceMode2D.Impulse);
         }
 
         // Update Server
@@ -71,7 +74,7 @@ public class Movement : NetworkComponent
     public void SubmitMoveServerRpc(Vector2 dir)
     {
         // Update Server Position
-        rb.AddForce(dir * Speed * Time.deltaTime, ForceMode2D.Impulse);
+        rb.AddForce(Time.deltaTime * Speed * ((WorldTileset)WorldManager.Instance.NetworkComponents["Tileset"]).GetTileDataWalkSpeed("Ground", Entity.transform.position) * dir, ForceMode2D.Impulse);
         netPosition.Value = transform.position;
     }
 

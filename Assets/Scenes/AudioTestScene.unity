@@ -517,10 +517,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5114863d65b873e45b6eaa035087f9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sourceCount: 255
+  sourceCount: 20
   sourceCache:
   - {fileID: 890007566}
   audioClips:
+  - name: Music
+    clip: {fileID: 8300000, guid: 410c0d6730617d241bc7a3034be07124, type: 3}
+    volume: 1
   - name: Music
     clip: {fileID: 8300000, guid: 410c0d6730617d241bc7a3034be07124, type: 3}
     volume: 1
