@@ -61,7 +61,7 @@ public class Movement : NetworkComponent
         // Instant Client Movement
         if (IsClient && !IsServer)
         {
-            rb.AddForce(Time.deltaTime * Speed * ((WorldTileset)WorldManager.Instance.NetworkComponents["Tileset"]).GetTileDataWalkSpeed("Ground", Entity.transform.position) * dir, ForceMode2D.Impulse);
+            rb.AddForce(Time.deltaTime * Speed * ((WorldTileMap)WorldManager.Instance.NetworkComponents["WorldTileMap"]).GetTileDataWalkSpeed("Ground", Entity.transform.position) * dir, ForceMode2D.Impulse);
         }
 
         // Update Server
@@ -74,7 +74,7 @@ public class Movement : NetworkComponent
     public void SubmitMoveServerRpc(Vector2 dir)
     {
         // Update Server Position
-        rb.AddForce(Time.deltaTime * Speed * ((WorldTileset)WorldManager.Instance.NetworkComponents["Tileset"]).GetTileDataWalkSpeed("Ground", Entity.transform.position) * dir, ForceMode2D.Impulse);
+        rb.AddForce(Time.deltaTime * Speed * ((WorldTileMap)WorldManager.Instance.NetworkComponents["WorldTileMap"]).GetTileDataWalkSpeed("Ground", Entity.transform.position) * dir, ForceMode2D.Impulse);
         netPosition.Value = transform.position;
     }
 

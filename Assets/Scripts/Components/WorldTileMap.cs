@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class WorldTileset : NetworkComponent
+public class WorldTileMap : NetworkComponent
 {
     [SerializeField] private SerializableDictionary<string, Tilemap> tileMapLayers;
     [SerializeField] private Dictionary<string, Tilemap> TileMapLayers;
@@ -12,7 +11,7 @@ public class WorldTileset : NetworkComponent
 
     void Awake()
     {
-        RefName = "Tileset";
+        RefName = "WorldTileMap";
     }
 
     void Start()
