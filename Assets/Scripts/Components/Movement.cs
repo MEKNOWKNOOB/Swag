@@ -1,8 +1,6 @@
 using System;
-using NUnit.Framework;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Movement : NetworkComponent
 {
