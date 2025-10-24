@@ -10463,7 +10463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   ShowTopMostFoldoutHeaderGroup: 1
-  Speed: 200
+  Speed: 500
 --- !u!61 &2026200660
 BoxCollider2D:
   m_ObjectHideFlags: 0

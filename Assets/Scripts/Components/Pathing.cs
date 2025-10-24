@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Pathing : NetworkComponent
 {
+    public static int DistanceSquared(Vector3Int a, Vector3Int b)
+    {
+        int dx = a.x - b.x;
+        int dy = a.y - b.y;
+        int dz = a.z - b.z;
+        return dx * dx + dy * dy + dz * dz;
+    }
+
     public static Vector3Int[] Directions =
     {
-        new(1,0,0),
-        new(-1,0,0),
-        new(0,1,0),
-        new(0,-1,0),
+        new(0,1,0), // up left
+        new(1,0,0), // up right
+        new(0,-1,0), // down right
+        new(-1,0,0), // down left
 
         new(1,1,0), // up
         new(1, -1,0), // right
@@ -27,139 +35,153 @@ public class Pathing : NetworkComponent
 
     }
 
-    public Vector2 PathToTarget(Vector3 targetPos, int targetRadius) /*, Dictionary<string, float> customHeuristics)*/
+    /// <summary>
+    /// BFS with priority queue path search
+    /// </summary>
+    /// <param name="targetPos">Position of target</param>
+    /// <param name="targetRadiusSquared">Determines if pathing can return early when reaching goal + radius</param>
+    /// <param name="maxIterations">Max search levels for BFS</param>
+    /// <returns>World Move Direction</returns>
+    public Vector2 PathToTarget(Vector3 targetPos, float targetRadiusSquared, int maxIterations) /*, Dictionary<string, float> customHeuristics)*/
     {
         WorldTileMap worldTileMap = (WorldTileMap)WorldManager.Instance.NetworkComponents["WorldTileMap"];
 
         // Avaiable Tiles
         PriorityQueue<Vector3Int> aTiles = new();
         // Reversed Constructed Paths 
-        Dictionary<Vector3Int, Vector3Int> cPath = new();
+        Dictionary<Vector3Int, (Vector3Int prevCell, Vector3Int initDir)> cPath = new();
 
         Vector3Int entityPos = worldTileMap.CellPos("Ground", Entity.transform.position);
         Vector3Int goalPos = worldTileMap.CellPos("Ground", targetPos);
-        float currScore = 0;
 
-        aTiles.Enqueue(entityPos, currScore);
-        cPath[entityPos] = entityPos;
+        Vector3Int closestTilePos = entityPos;
+        aTiles.Enqueue(entityPos, 0);
+        cPath[entityPos] = (entityPos, Vector3Int.zero);
 
         // BFS with priority queue
-        while (aTiles.Count > 0)
+        for (float currScore = 1; aTiles.Count > 0 && currScore < maxIterations; currScore++)
         {
             Vector3Int currTilePos = aTiles.Dequeue();
             if (currTilePos == goalPos)
             {
-                return DeconstructPath(cPath, currTilePos, entityPos);
+                return MoveDirection(cPath[currTilePos].initDir);
+            }
+            if (DistanceSquared(goalPos, closestTilePos) < targetRadiusSquared)
+            {
+                return MoveDirection(cPath[closestTilePos].initDir);
             }
 
-            // update current level/distance
-            currScore += worldTileMap.GetTileDataCost("Ground", currTilePos);
-            // determine which cardinal tiles are available
-            bool[] diaganols = { false, false, false, false };
-
-            // loop through the 4 adjacent tile driections
             Vector3Int nextTilePos;
             float nextTileCost;
+            List<(bool isValid, float cost)> neighborTiles = new();
+
+            // loop through the 4 adjacent tile driections, update them in neighbortiles
             for (int i = 0; i < 4; i++)
             {
                 nextTilePos = currTilePos + Directions[i];
-                // if next tile has already been checked
-                if (cPath.ContainsKey(nextTilePos))
-                {
-                    continue;
-                }
                 nextTileCost = worldTileMap.GetTileDataCost("Ground", nextTilePos);
+
+                // if next tile has already been checked
                 // if next tile is invalid
-                if (nextTileCost > 999)
+                if (cPath.ContainsKey(nextTilePos) || nextTileCost > 999)
                 {
+                    neighborTiles.Add((false, 999));
                     continue;
                 }
+
                 // push next tile to queue
                 aTiles.Enqueue(nextTilePos, nextTileCost + currScore);
-                cPath[nextTilePos] = currTilePos;
-                diaganols[i] = true;
+                if (cPath[currTilePos].initDir == Vector3Int.zero)
+                {
+                    cPath[nextTilePos] = (currTilePos, Directions[i]);
+                }
+                else
+                {
+                    cPath[nextTilePos] = (currTilePos, cPath[currTilePos].initDir);
+                }
+
+                if (DistanceSquared(goalPos, closestTilePos) > DistanceSquared(goalPos, nextTilePos))
+                {
+                    closestTilePos = nextTilePos;
+                }
+
+                // update neighborTiles
+                neighborTiles.Add((true, nextTileCost));
             }
 
-            // diagnols
-            // should fix it not check neighbor scores
-            nextTilePos = currTilePos + Directions[4];
-            nextTileCost = worldTileMap.GetTileDataCost("Ground", nextTilePos);
-            if (!cPath.ContainsKey(nextTilePos) && nextTileCost <= 999 && diaganols[0] && diaganols[2])
+            // loop through the 4 cardinal tile driections
+            for (int i = 0; i < 4; i++)
             {
-                aTiles.Enqueue(nextTilePos, nextTileCost + currScore + 0.5f);
-                cPath[nextTilePos] = currTilePos;
-            }
-            
-            nextTilePos = currTilePos + Directions[5];
-            nextTileCost = worldTileMap.GetTileDataCost("Ground", nextTilePos);
-            if (!cPath.ContainsKey(nextTilePos) && nextTileCost <= 999 && diaganols[0] && diaganols[3])
-            {
-                aTiles.Enqueue(nextTilePos, nextTileCost + currScore + 0.5f);
-                cPath[nextTilePos] = currTilePos;
-            }
-            
-            nextTilePos = currTilePos + Directions[6];
-            nextTileCost = worldTileMap.GetTileDataCost("Ground", nextTilePos);
-            if (!cPath.ContainsKey(nextTilePos) && nextTileCost <= 999 && diaganols[1] && diaganols[3])
-            {
-                aTiles.Enqueue(nextTilePos, nextTileCost + currScore + 0.5f);
-                cPath[nextTilePos] = currTilePos;
-            }
-            
-            nextTilePos = currTilePos + Directions[7];
-            nextTileCost = worldTileMap.GetTileDataCost("Ground", nextTilePos);
-            if(!cPath.ContainsKey(nextTilePos) && nextTileCost <= 999 && diaganols[1] && diaganols[2])
-            {
-                aTiles.Enqueue(nextTilePos, nextTileCost + currScore + 0.5f);
-                cPath[nextTilePos] = currTilePos;
-            }
+                // if neighbor tiles are valid
+                if (!(neighborTiles[i].isValid && neighborTiles[(i + 1) % 4].isValid))
+                {
+                    continue;
+                }
 
+                nextTilePos = currTilePos + Directions[i + 4];
+                nextTileCost = worldTileMap.GetTileDataCost("Ground", nextTilePos);
 
+                // if next tile has already been checked
+                // if next tile is invalid
+                if (cPath.ContainsKey(nextTilePos) || nextTileCost > 999)
+                {
+                    continue;
+                }
 
+                // push next tile to queue
+                aTiles.Enqueue(nextTilePos, nextTileCost + currScore + 0.5f);
+                if (cPath[currTilePos].initDir == Vector3Int.zero)
+                {
+                    cPath[nextTilePos] = (currTilePos, Directions[i + 4]);
+                }
+                else
+                {
+                    cPath[nextTilePos] = (currTilePos, cPath[currTilePos].initDir);
+                }
+
+                if (DistanceSquared(goalPos, closestTilePos) > DistanceSquared(goalPos, nextTilePos))
+                {
+                    closestTilePos = nextTilePos;
+                }
+            }
         }
-
-        return Vector2.zero; // no path found
+        return MoveDirection(cPath[closestTilePos].initDir); // no path found
     }
 
-    private Vector2 DeconstructPath(Dictionary<Vector3Int, Vector3Int> cPath, Vector3Int entry, Vector3Int home)
+    /// <summary>
+    /// Converts CellPosDirection into WorldDirection
+    /// </summary>
+    private Vector2 MoveDirection(Vector3Int initDir)
     {
-        Vector3Int currPos = entry;
-        while (cPath[currPos] != home)
-        {
-            // print(currPos);
-            currPos = cPath[currPos];
-        }
-
-        Vector3Int pathDirection = currPos - home;
-        if (Directions[0] == pathDirection)
-        {
-            return new Vector2(1, 1);
-        }
-        else if (Directions[1] == pathDirection)
-        {
-            return new Vector2(-1, -1);
-        }
-        else if (Directions[2] == pathDirection)
+        if (Directions[0] == initDir)
         {
             return new Vector2(-1, 1);
         }
-        else if (Directions[3] == pathDirection)
+        else if (Directions[1] == initDir)
+        {
+            return new Vector2(1, 1);
+        }
+        else if (Directions[2] == initDir)
         {
             return new Vector2(1, -1);
         }
-        else if (Directions[4] == pathDirection)
+        else if (Directions[3] == initDir)
+        {
+            return new Vector2(-1, -1);
+        }
+        else if (Directions[4] == initDir)
         {
             return new Vector2(0, 1);
         }
-        else if (Directions[5] == pathDirection)
+        else if (Directions[5] == initDir)
         {
             return new Vector2(1, 0);
         }
-        else if (Directions[6] == pathDirection)
+        else if (Directions[6] == initDir)
         {
             return new Vector2(0, -1);
         }
-        else if (Directions[7] == pathDirection)
+        else if (Directions[7] == initDir)
         {
             return new Vector2(-1, 0);
         }

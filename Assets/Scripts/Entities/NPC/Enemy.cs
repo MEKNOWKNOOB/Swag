@@ -27,7 +27,7 @@ public class Enemy : NetworkEntity
 
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
-            ((Movement)NetworkComponents["Movement"]).Direction = ((Pathing)NetworkComponents["Pathing"]).PathToTarget(player.transform.position, 1);
+            ((Movement)NetworkComponents["Movement"]).Direction = ((Pathing)NetworkComponents["Pathing"]).PathToTarget(player.transform.position, 9, 1000);
         else
             ((Movement)NetworkComponents["Movement"]).Direction = new Vector2(0, 0);
     }
