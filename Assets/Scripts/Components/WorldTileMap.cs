@@ -45,7 +45,7 @@ public class WorldTileMap : NetworkComponent
     {
         return TileMapLayers[layer].WorldToCell(pos);
     }
-    
+
     public bool IsTileValid(string layer, Vector3 pos)
     {
         if (!MapLayerData[layer].ContainsKey(CellPos(layer, pos)))
@@ -57,7 +57,7 @@ public class WorldTileMap : NetworkComponent
 
     public TileData GetTileData(string layer, Vector3 pos)
     {
-        if(!IsTileValid(layer, pos))
+        if (!IsTileValid(layer, pos))
         {
             return null;
         }
@@ -89,7 +89,7 @@ public class WorldTileMap : NetworkComponent
     {
         return TileMapLayers[layer].WorldToCell(pos);
     }
-    
+
     public bool IsTileValid(string layer, Vector3Int pos)
     {
         if (!MapLayerData[layer].ContainsKey(pos))
@@ -101,7 +101,7 @@ public class WorldTileMap : NetworkComponent
 
     public TileData GetTileData(string layer, Vector3Int pos)
     {
-        if(!IsTileValid(layer, pos))
+        if (!IsTileValid(layer, pos))
         {
             return null;
         }

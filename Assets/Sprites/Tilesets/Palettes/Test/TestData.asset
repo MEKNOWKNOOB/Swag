@@ -37,5 +37,5 @@ MonoBehaviour:
   TileData:
     walkable: 1
     walkSpeed: 0.8
-    pathingCost: 200
+    pathingCost: 9999999
     maxHealth: 1
