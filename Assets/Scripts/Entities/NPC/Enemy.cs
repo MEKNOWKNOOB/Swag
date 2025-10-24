@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class Enemy : NetworkEntity
@@ -11,7 +12,7 @@ public class Enemy : NetworkEntity
     {
         if (IsServer)
         {
-
+            NetworkObject.ChangeOwnership(Unity.Netcode.NetworkManager.Singleton.LocalClientId);
         }
     }
 
@@ -24,6 +25,10 @@ public class Enemy : NetworkEntity
     {
         if (!IsServer) return;
 
-        ((Movement)NetworkComponents["Movement"]).Direction = Vector2.zero;
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+            ((Movement)NetworkComponents["Movement"]).Direction = ((Pathing)NetworkComponents["Pathing"]).PathToTarget(player.transform.position, 1);
+        else
+            ((Movement)NetworkComponents["Movement"]).Direction = new Vector2(0, 0);
     }
 }
