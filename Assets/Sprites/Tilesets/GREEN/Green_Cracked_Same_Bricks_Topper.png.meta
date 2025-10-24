@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 3198e4af8ca363949bef86693db90b0d
+guid: 1ca625aec26b1c74cba3011388d6c37c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 888766001858365469
-    second: RedTileSetBasic_0
+      213: 7734512008587552344
+    second: Green_Cracked_Same_Bricks_Topper_0
+  - first:
+      213: -4046341070201151837
+    second: Green_Cracked_Same_Bricks_Topper_1
+  - first:
+      213: 3553098905563725298
+    second: Green_Cracked_Same_Bricks_Topper_2
+  - first:
+      213: -7058763589239533386
+    second: Green_Cracked_Same_Bricks_Topper_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RedTileSetBasic_0
+      name: Green_Cracked_Same_Bricks_Topper_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d18463548f7855c00800000000000000
-      internalID: 888766001858365469
+      spriteID: 856aade41b1865b60800000000000000
+      internalID: 7734512008587552344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedTileSetBasic_1
+      name: Green_Cracked_Same_Bricks_Topper_1
       rect:
         serializedVersion: 2
         x: 32
@@ -148,16 +157,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 447c0c99e03b0fa41be68cf6f4514f9d
-      internalID: -1241355160
+      spriteID: 3ae169e2c3288d7c0800000000000000
+      internalID: -4046341070201151837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedTileSetBasic_2
+      name: Green_Cracked_Same_Bricks_Topper_2
       rect:
         serializedVersion: 2
         x: 64
@@ -170,16 +179,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 337e99222687e994d96de9261f8bb1b7
-      internalID: 1994701325
+      spriteID: 2fd74f521a42f4130800000000000000
+      internalID: 3553098905563725298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedTileSetBasic_3
+      name: Green_Cracked_Same_Bricks_Topper_3
       rect:
         serializedVersion: 2
         x: 96
@@ -192,10 +201,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9f5ca2c78adabc64db93f359d9048b27
-      internalID: -1606691687
+      spriteID: 6b09aed1aeb3a0e90800000000000000
+      internalID: -7058763589239533386
       vertices: []
       indices: 
       edges: []
@@ -204,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f9acfdb51d09c584bbe74cf26b8f8575
+    spriteID: d3bc173c904ee2b44afeacf8a50a312e
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +225,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RedTileSetBasic_0: 888766001858365469
-      RedTileSetBasic_1: -1241355160
-      RedTileSetBasic_2: 1994701325
-      RedTileSetBasic_3: -1606691687
+      Green_Cracked_Same_Bricks_Topper_0: 7734512008587552344
+      Green_Cracked_Same_Bricks_Topper_1: -4046341070201151837
+      Green_Cracked_Same_Bricks_Topper_2: 3553098905563725298
+      Green_Cracked_Same_Bricks_Topper_3: -7058763589239533386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
