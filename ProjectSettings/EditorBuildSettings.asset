@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prototype/ServerClientPrototype.unity
     guid: b3317969b0898b640a6e1c02f7ab2965
+  - enabled: 1
+    path: Assets/Scenes/Prototype/DebugTilemapTest.unity
+    guid: 54f2cb2ba6d5ce44fa4cd855e8d67977
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
