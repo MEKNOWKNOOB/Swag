@@ -24,5 +24,6 @@ public class LocalPlayer : NetworkEntity
         if (!IsOwner) return;
 
         ((Movement)NetworkComponents["Movement"]).Direction = InputManager.Instance.MoveVector;
+        //((Health)NetworkComponents["Health"]) = ;
     }
 }
