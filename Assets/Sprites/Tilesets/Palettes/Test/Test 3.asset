@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc07278b04c8db14382e223789277559, type: 3}
   m_Name: Test 3
   m_EditorClassIdentifier: Assembly-CSharp::CustomTile
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2183643430569040044, guid: d6ae6586e4d6e2441bb14183a9f60ee4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   TileData:
-    walkable: 0
-    walkSpeed: 0
-    pathingCost: 0
-    maxHealth: 0
+    walkable: 1
+    walkSpeed: 1
+    pathingCost: 1
+    maxHealth: 1
