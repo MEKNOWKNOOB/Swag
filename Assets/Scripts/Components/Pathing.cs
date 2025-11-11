@@ -99,7 +99,7 @@ public class Pathing : NetworkComponent
                 }
 
                 // push next tile to queue
-                aTiles.Enqueue(nextTilePos, nextTileCost + currScore);
+                aTiles.Enqueue(nextTilePos, Mathf.Pow(nextTileCost, 2) + Mathf.Pow(currScore, 2) + DistanceSquared(goalPos, nextTilePos));
                 if (cPath[currTilePos].initDir == Vector3Int.zero)
                 {
                     cPath[nextTilePos] = (currTilePos, Directions[i]);
@@ -119,6 +119,7 @@ public class Pathing : NetworkComponent
             }
 
             // loop through the 4 cardinal tile driections
+            // add check for adjacent tile costs
             for (int i = 0; i < 4; i++)
             {
                 // if neighbor tiles are valid
@@ -138,7 +139,7 @@ public class Pathing : NetworkComponent
                 }
 
                 // push next tile to queue
-                aTiles.Enqueue(nextTilePos, nextTileCost + currScore + 0.5f);
+                aTiles.Enqueue(nextTilePos, Mathf.Pow(nextTileCost, 2) + Mathf.Pow(currScore + 0.5f, 2) + DistanceSquared(goalPos, nextTilePos));
                 if (cPath[currTilePos].initDir == Vector3Int.zero)
                 {
                     cPath[nextTilePos] = (currTilePos, Directions[i + 4]);
