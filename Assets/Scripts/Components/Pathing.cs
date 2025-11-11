@@ -67,7 +67,8 @@ public class Pathing : NetworkComponent
             {
                 if (DebugManager.Instance != null)
                 {
-                    DebugManager.Instance.SetDebugTile(worldTileMap.CellWorldPos("Ground", currTilePos), DebugManager.DebugLayers.Pathing, DebugManager.DebugTileTypes.Red);
+                    DebugManager.Instance.ClearDebugTiles(gameObject.GetInstanceID(), DebugManager.DebugLayers.Pathing);
+                    SetDebugPath(cPath, closestTilePos, DebugManager.DebugTileTypes.Red);
                 }
                 return MoveDirection(cPath[currTilePos].initDir);
             }
@@ -75,7 +76,8 @@ public class Pathing : NetworkComponent
             {
                 if (DebugManager.Instance != null)
                 {
-                    DebugManager.Instance.SetDebugTile(worldTileMap.CellWorldPos("Ground", closestTilePos), DebugManager.DebugLayers.Pathing, DebugManager.DebugTileTypes.Blue);
+                    DebugManager.Instance.ClearDebugTiles(gameObject.GetInstanceID(), DebugManager.DebugLayers.Pathing);
+                    SetDebugPath(cPath, closestTilePos, DebugManager.DebugTileTypes.Blue);
                 }
                 return MoveDirection(cPath[closestTilePos].initDir);
             }
@@ -196,5 +198,41 @@ public class Pathing : NetworkComponent
             return new Vector2(-1, 0);
         }
         return Vector2.zero;
+    }
+
+    public void SetDebugPath(Dictionary<Vector3Int, (Vector3Int prevCell, Vector3Int initDir)> cPath, Vector3Int lastTile, DebugManager.DebugTileTypes tileType)
+    {
+        List<Vector3Int> cells = new List<Vector3Int>();
+        cells.Add(lastTile);
+        (Vector3Int prevCell, Vector3Int initDir) curTup = cPath[lastTile];
+
+        Vector3Int direction = curTup.initDir;
+
+        int maxPath = 50;
+        int pathLength = 0;
+
+        do
+        {
+            cells.Add(curTup.prevCell);
+            curTup = cPath[curTup.prevCell];
+            direction = curTup.initDir;
+
+            pathLength++;
+
+            if (pathLength >= maxPath)
+            {
+                break;
+            }
+        }
+        while (direction != Vector3Int.zero);
+
+        DebugManager.Instance.SetDebugTiles(
+            gameObject.GetInstanceID(), 
+            cells, 
+            DebugManager.DebugLayers.Pathing, 
+            tileType
+        );
+
+        
     }
 }
