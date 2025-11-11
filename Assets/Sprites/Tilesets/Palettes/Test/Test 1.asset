@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc07278b04c8db14382e223789277559, type: 3}
   m_Name: Test 1
   m_EditorClassIdentifier: Assembly-CSharp::CustomTile
-  m_Sprite: {fileID: 21300000, guid: 42c71b2abffec2c448dcc9e2c7cacca0, type: 3}
+  m_Sprite: {fileID: -1319076396, guid: 42c71b2abffec2c448dcc9e2c7cacca0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
