@@ -46,6 +46,11 @@ public class WorldTileMap : NetworkComponent
         return TileMapLayers[layer].WorldToCell(pos);
     }
 
+    public Vector3 CellWorldPos(string layer, Vector3Int cellPos)
+    {
+        return TileMapLayers[layer].CellToWorld(cellPos);
+    }
+
     public bool IsTileValid(string layer, Vector3 pos)
     {
         if (!MapLayerData[layer].ContainsKey(CellPos(layer, pos)))

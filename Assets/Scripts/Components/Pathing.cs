@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Pathing : NetworkComponent
 {
@@ -64,10 +65,18 @@ public class Pathing : NetworkComponent
             Vector3Int currTilePos = aTiles.Dequeue();
             if (currTilePos == goalPos)
             {
+                if (DebugManager.Instance != null)
+                {
+                    DebugManager.Instance.SetDebugTile(worldTileMap.CellWorldPos("Ground", currTilePos), DebugManager.DebugLayers.Pathing, DebugManager.DebugTileTypes.Red);
+                }
                 return MoveDirection(cPath[currTilePos].initDir);
             }
             if (DistanceSquared(goalPos, closestTilePos) < targetRadiusSquared)
             {
+                if (DebugManager.Instance != null)
+                {
+                    DebugManager.Instance.SetDebugTile(worldTileMap.CellWorldPos("Ground", closestTilePos), DebugManager.DebugLayers.Pathing, DebugManager.DebugTileTypes.Blue);
+                }
                 return MoveDirection(cPath[closestTilePos].initDir);
             }
 
