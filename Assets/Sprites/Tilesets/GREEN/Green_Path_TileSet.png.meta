@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d6ae6586e4d6e2441bb14183a9f60ee4
+guid: 0bb3b4cda0444a74c9329c79d8a0d7b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2183643430569040044
-    second: GreenTileSetBasic_0
+      213: 7582473836294218278
+    second: Green_Path_TileSet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,89 +113,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreenTileSetBasic_0
+      name: Green_Path_TileSet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca8de23712cdd4e10800000000000000
-      internalID: 2183643430569040044
+      spriteID: 622a20bc7cb5a3960800000000000000
+      internalID: 7582473836294218278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GreenTileSetBasic_1
+      name: Green_Path_TileSet_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4958173d068c21442a3f0e46fd188509
-      internalID: 6129249
+      spriteID: f7078936f592de9418fce398488c1034
+      internalID: 1432269341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GreenTileSetBasic_2
+      name: Green_Path_TileSet_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a002930661adf684a8f24dd92aa97759
-      internalID: -276226028
+      spriteID: bfbbdabcb60d1a54e9c74b8294749e5a
+      internalID: 740131675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GreenTileSetBasic_3
+      name: Green_Path_TileSet_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0aca2304e8fcc449b5d134731dc697b
-      internalID: -420224028
+      spriteID: c052b4dc38d31eb4886142ddee2e6272
+      internalID: 931889841
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1d174da552365e9468b739f8da04a8e5
+    spriteID: 4ba5a27d6a95d2e4a92c07a5f603de4c
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +216,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      GreenTileSetBasic_0: 2183643430569040044
-      GreenTileSetBasic_1: 6129249
-      GreenTileSetBasic_2: -276226028
-      GreenTileSetBasic_3: -420224028
+      Green_Path_TileSet_0: 7582473836294218278
+      Green_Path_TileSet_1: 1432269341
+      Green_Path_TileSet_2: 740131675
+      Green_Path_TileSet_3: 931889841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

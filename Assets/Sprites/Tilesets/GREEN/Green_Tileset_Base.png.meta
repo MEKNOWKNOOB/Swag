@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e692c42ba89ca9448b93d0863e5ad818
+guid: 7d2f66d352ba7654290cf1ea2b79114f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4377060589598123220
-    second: GreyTileSetBasic_0
+      213: 7931856578941711523
+    second: Green_Tileset_Base_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,89 +113,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreyTileSetBasic_0
+      name: Green_Tileset_Base_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2b54ac959e8143c0800000000000000
-      internalID: -4377060589598123220
+      spriteID: 3a47a25a88d931e60800000000000000
+      internalID: 7931856578941711523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GreyTileSetBasic_1
+      name: Green_Tileset_Base_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95cc593cadd2a594783ece5cce9cf6d4
-      internalID: -1876584280
+      spriteID: a899614a0dda06742aaf2946a814688a
+      internalID: -50663198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GreyTileSetBasic_2
+      name: Green_Tileset_Base_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0bcb29fa5964554eba502f3f1d1fa3e
-      internalID: -1193164561
+      spriteID: b136e137bc9faa640a46d71c3963d323
+      internalID: -106735417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GreyTileSetBasic_3
+      name: Green_Tileset_Base_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 210108b6cc0e32041bf26e0b0d22b309
-      internalID: -718806141
+      spriteID: 8a2a2e93eb3b0824b8dbb10bbcd52c45
+      internalID: 1619935994
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eb6c178b8ac53e64f882cb59350f0147
+    spriteID: abe7d3fb1614ea44ea7ecfec2e61a11a
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +216,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      GreyTileSetBasic_0: -4377060589598123220
-      GreyTileSetBasic_1: -1876584280
-      GreyTileSetBasic_2: -1193164561
-      GreyTileSetBasic_3: -718806141
+      Green_Tileset_Base_0: 7931856578941711523
+      Green_Tileset_Base_1: -50663198
+      Green_Tileset_Base_2: -106735417
+      Green_Tileset_Base_3: 1619935994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
