@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 7d2f66d352ba7654290cf1ea2b79114f
+guid: 850c6affbd07d1746bd2d33194702ee6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7931856578941711523
-    second: Green_Tileset_Base_0
+      213: -5199606260863052488
+    second: Green_Same_Bricks_Topper_0
+  - first:
+      213: 8063874099745560530
+    second: Green_Same_Bricks_Topper_1
+  - first:
+      213: 3559517602692573897
+    second: Green_Same_Bricks_Topper_2
+  - first:
+      213: -75212376677906264
+    second: Green_Same_Bricks_Topper_3
+  - first:
+      213: -2310646511471512047
+    second: Green_Same_Bricks_Topper_4
+  - first:
+      213: -753429014430923563
+    second: Green_Same_Bricks_Topper_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,7 +89,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Green_Tileset_Base_0
+      name: Green_Same_Bricks_Topper_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a47a25a88d931e60800000000000000
-      internalID: 7931856578941711523
+      spriteID: 8355c5987a947d7b0800000000000000
+      internalID: -5199606260863052488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green_Tileset_Base_1
+      name: Green_Same_Bricks_Topper_1
       rect:
         serializedVersion: 2
         x: 32
@@ -148,16 +163,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a899614a0dda06742aaf2946a814688a
-      internalID: -50663198
+      spriteID: 2d79eccf4c2a8ef60800000000000000
+      internalID: 8063874099745560530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green_Tileset_Base_2
+      name: Green_Same_Bricks_Topper_2
       rect:
         serializedVersion: 2
         x: 64
@@ -170,16 +185,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b136e137bc9faa640a46d71c3963d323
-      internalID: -106735417
+      spriteID: 9caad388662f56130800000000000000
+      internalID: 3559517602692573897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green_Tileset_Base_3
+      name: Green_Same_Bricks_Topper_3
       rect:
         serializedVersion: 2
         x: 96
@@ -192,10 +207,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8a2a2e93eb3b0824b8dbb10bbcd52c45
-      internalID: 1619935994
+      spriteID: 8a8866dedbac4fef0800000000000000
+      internalID: -75212376677906264
       vertices: []
       indices: 
       edges: []
@@ -204,7 +219,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: abe7d3fb1614ea44ea7ecfec2e61a11a
+    spriteID: 6dc0f4e1ede03ff46a87883884b2b29f
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +231,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Green_Tileset_Base_0: 7931856578941711523
-      Green_Tileset_Base_1: -50663198
-      Green_Tileset_Base_2: -106735417
-      Green_Tileset_Base_3: 1619935994
+      Green_Same_Bricks_Topper_0: -5199606260863052488
+      Green_Same_Bricks_Topper_1: 8063874099745560530
+      Green_Same_Bricks_Topper_2: 3559517602692573897
+      Green_Same_Bricks_Topper_3: -75212376677906264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

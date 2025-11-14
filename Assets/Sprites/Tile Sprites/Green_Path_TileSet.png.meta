@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 1ca625aec26b1c74cba3011388d6c37c
+guid: 0bb3b4cda0444a74c9329c79d8a0d7b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7734512008587552344
-    second: Green_Cracked_Same_Bricks_Topper_0
-  - first:
-      213: -4046341070201151837
-    second: Green_Cracked_Same_Bricks_Topper_1
-  - first:
-      213: 3553098905563725298
-    second: Green_Cracked_Same_Bricks_Topper_2
-  - first:
-      213: -7058763589239533386
-    second: Green_Cracked_Same_Bricks_Topper_3
+      213: 7582473836294218278
+    second: Green_Path_TileSet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -83,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -122,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Green_Cracked_Same_Bricks_Topper_0
+      name: Green_Path_TileSet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 856aade41b1865b60800000000000000
-      internalID: 7734512008587552344
+      spriteID: 622a20bc7cb5a3960800000000000000
+      internalID: 7582473836294218278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green_Cracked_Same_Bricks_Topper_1
+      name: Green_Path_TileSet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -157,16 +148,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3ae169e2c3288d7c0800000000000000
-      internalID: -4046341070201151837
+      spriteID: f7078936f592de9418fce398488c1034
+      internalID: 1432269341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green_Cracked_Same_Bricks_Topper_2
+      name: Green_Path_TileSet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,16 +170,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2fd74f521a42f4130800000000000000
-      internalID: 3553098905563725298
+      spriteID: bfbbdabcb60d1a54e9c74b8294749e5a
+      internalID: 740131675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green_Cracked_Same_Bricks_Topper_3
+      name: Green_Path_TileSet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -201,10 +192,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6b09aed1aeb3a0e90800000000000000
-      internalID: -7058763589239533386
+      spriteID: c052b4dc38d31eb4886142ddee2e6272
+      internalID: 931889841
       vertices: []
       indices: 
       edges: []
@@ -213,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d3bc173c904ee2b44afeacf8a50a312e
+    spriteID: 4ba5a27d6a95d2e4a92c07a5f603de4c
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +214,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.75},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Green_Cracked_Same_Bricks_Topper_0: 7734512008587552344
-      Green_Cracked_Same_Bricks_Topper_1: -4046341070201151837
-      Green_Cracked_Same_Bricks_Topper_2: 3553098905563725298
-      Green_Cracked_Same_Bricks_Topper_3: -7058763589239533386
+      Green_Path_TileSet_0: 7582473836294218278
+      Green_Path_TileSet_1: 1432269341
+      Green_Path_TileSet_2: 740131675
+      Green_Path_TileSet_3: 931889841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
