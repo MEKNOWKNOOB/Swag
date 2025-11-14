@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Pathing : NetworkComponent
 {
+    [SerializeField] private int MaxIterations = 100;
+
     public static int DistanceSquared(Vector3Int a, Vector3Int b)
     {
         int dx = a.x - b.x;
@@ -36,15 +36,22 @@ public class Pathing : NetworkComponent
 
     }
 
+    public Vector2 PathToTarget(Vector3 targetPos, float targetRadiusSquared)
+    {
+        return PathToTarget(targetPos, targetRadiusSquared, MaxIterations);
+    }
+
     /// <summary>
     /// BFS with priority queue path search
     /// </summary>
     /// <param name="targetPos">Position of target</param>
-    /// <param name="targetRadiusSquared">Determines if pathing can return early when reaching goal + radius</param>
+    /// <param name="targetRadius">Determines if pathing can return early when reaching goal + radius</param>
     /// <param name="maxIterations">Max search levels for BFS</param>
     /// <returns>World Move Direction</returns>
-    public Vector2 PathToTarget(Vector3 targetPos, float targetRadiusSquared, int maxIterations) /*, Dictionary<string, float> customHeuristics)*/
+    public Vector2 PathToTarget(Vector3 targetPos, float targetRadius, int maxIterations) /*, Dictionary<string, float> customHeuristics)*/
     {
+        targetRadius *= targetRadius; // square the value for more efficency
+
         WorldTileMap worldTileMap = (WorldTileMap)WorldManager.Instance.NetworkComponents["WorldTileMap"];
 
         // Avaiable Tiles
@@ -72,7 +79,7 @@ public class Pathing : NetworkComponent
                 }
                 return MoveDirection(cPath[currTilePos].initDir);
             }
-            if (DistanceSquared(goalPos, closestTilePos) < targetRadiusSquared)
+            if (DistanceSquared(goalPos, closestTilePos) < targetRadius)
             {
                 if (DebugManager.Instance != null)
                 {

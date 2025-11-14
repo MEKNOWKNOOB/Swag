@@ -5,6 +5,7 @@ public class LocalPlayer : NetworkEntity
     protected override void Start()
     {
         base.Start();
+        GameManager.Instance.Players.Add(this);
     }
 
     public override void OnNetworkSpawn()

@@ -1,6 +1,11 @@
-public class WorldManager : NetworkEntity
+using System.Collections.Generic;
+using UnityEngine.SocialPlatforms;
+
+public class GameManager : NetworkEntity
 {
-    public static WorldManager Instance;
+    public static GameManager Instance;
+
+    public List<LocalPlayer> Players = new();
 
     void Awake()
     {

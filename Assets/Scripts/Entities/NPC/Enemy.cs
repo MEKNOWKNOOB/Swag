@@ -1,4 +1,3 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class Enemy : NetworkEntity
@@ -25,10 +24,6 @@ public class Enemy : NetworkEntity
     {
         if (!IsServer) return;
 
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player != null)
-            ((Movement)NetworkComponents["Movement"]).Direction = ((Pathing)NetworkComponents["Pathing"]).PathToTarget(player.transform.position, 9, 1000);
-        else
-            ((Movement)NetworkComponents["Movement"]).Direction = new Vector2(0, 0);
+       ((Movement)NetworkComponents["Movement"]).Direction = ((Behavior)NetworkComponents["Behavior"]).NextMove();
     }
 }
