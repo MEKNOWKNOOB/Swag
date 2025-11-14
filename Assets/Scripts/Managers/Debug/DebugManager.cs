@@ -26,6 +26,7 @@ public class DebugManager : NetworkEntity
     [SerializeField] protected LocalPlayer Player;
 
     [SerializeField] protected bool debugEnabled = true;
+    private bool debugDown = false;
 
 
     void Awake()
@@ -48,29 +49,23 @@ public class DebugManager : NetworkEntity
 
     void Update()
     {
-        /*
-        if (Player != null)
+        if (InputManager.Instance != null)
         {
-            if (debugTiles == null)
+            if (!debugDown && InputManager.Instance.DebugBool)
             {
-                WorldTileMap worldTileMap = (WorldTileMap)WorldManager.Instance.NetworkComponents["WorldTileMap"];
-                bool success = worldTileMap.TileMapLayers.TryGetValue("Debug", out DebugTilemap);
-                if (!success)
-                {
-                    Debug.LogWarning("DebugManager: Unable to get the Debug tilemap.");
-                }
-
-                
+                debugDown = true;
+                ToggleDebugEnabled();
             }
-
-            // SetDebugTile(Player.transform.position, DebugLayers.Pathing, DebugTileTypes.Blue);
+            else if (debugDown && !InputManager.Instance.DebugBool)
+            {
+                debugDown = false;
+            }
         }
-        else
+
+        if (!debugEnabled)
         {
-            Player = FindObjectOfType<LocalPlayer>();
-
+            ClearDebug();
         }
-        */
     }
 
     public void EnableDebug()
@@ -82,10 +77,34 @@ public class DebugManager : NetworkEntity
     {
         debugEnabled = false;
 
+        ClearDebug();
+    }
+
+    protected void ClearDebug()
+    {
+        ClearAllDebugTiles();
+    }
+
+    protected void ClearAllDebugTiles()
+    {
+        List<(int id, DebugLayers layerType)> keys = new List<(int id, DebugLayers layerType)>(DebugTileGroups.Keys);
+
         // Clean up all of the debugs
-        foreach ((int id, DebugLayers layerType) in DebugTileGroups.Keys)
+        foreach ((int id, DebugLayers layerType) in keys)
         {
             ClearDebugTiles(id, layerType);
+        }
+    }
+
+    public void ToggleDebugEnabled()
+    {
+        if (debugEnabled)
+        {
+            DisableDebug();
+        }
+        else
+        {
+            EnableDebug();
         }
     }
 
