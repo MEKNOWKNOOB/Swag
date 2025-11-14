@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DebugManager : NetworkEntity
 {
@@ -27,6 +25,9 @@ public class DebugManager : NetworkEntity
     [SerializeField] protected Tilemap DebugTilemap;
     [SerializeField] protected LocalPlayer Player;
 
+    [SerializeField] protected bool debugEnabled = true;
+    private bool debugDown = false;
+
 
     void Awake()
     {
@@ -48,29 +49,68 @@ public class DebugManager : NetworkEntity
 
     void Update()
     {
-        /*
-        if (Player != null)
+        if (InputManager.Instance != null)
         {
-            if (debugTiles == null)
+            if (!debugDown && InputManager.Instance.DebugBool)
             {
-                WorldTileMap worldTileMap = (WorldTileMap)WorldManager.Instance.NetworkComponents["WorldTileMap"];
-                bool success = worldTileMap.TileMapLayers.TryGetValue("Debug", out DebugTilemap);
-                if (!success)
-                {
-                    Debug.LogWarning("DebugManager: Unable to get the Debug tilemap.");
-                }
-
-                
+                debugDown = true;
+                ToggleDebugEnabled();
             }
+            else if (debugDown && !InputManager.Instance.DebugBool)
+            {
+                debugDown = false;
+            }
+        }
 
-            // SetDebugTile(Player.transform.position, DebugLayers.Pathing, DebugTileTypes.Blue);
+        if (!debugEnabled)
+        {
+            ClearDebug();
+        }
+    }
+
+    public void EnableDebug()
+    {
+        debugEnabled = true;
+    }
+
+    public void DisableDebug()
+    {
+        debugEnabled = false;
+
+        ClearDebug();
+    }
+
+    protected void ClearDebug()
+    {
+        ClearAllDebugTiles();
+    }
+
+    protected void ClearAllDebugTiles()
+    {
+        List<(int id, DebugLayers layerType)> keys = new List<(int id, DebugLayers layerType)>(DebugTileGroups.Keys);
+
+        // Clean up all of the debugs
+        foreach ((int id, DebugLayers layerType) in keys)
+        {
+            ClearDebugTiles(id, layerType);
+        }
+    }
+
+    public void ToggleDebugEnabled()
+    {
+        if (debugEnabled)
+        {
+            DisableDebug();
         }
         else
         {
-            Player = FindObjectOfType<LocalPlayer>();
-
+            EnableDebug();
         }
-        */
+    }
+
+    public bool GetDebugEnabled()
+    {
+        return debugEnabled;
     }
 
     public void GenerateDebugTileGroup(int id, DebugLayers layerType)
@@ -134,6 +174,8 @@ public class DebugManager : NetworkEntity
         }
 
         tileGroup.Clear();
+
+        DebugTileGroups.Remove((id, layerType));
     }
 
     public void SetDebugTiles(int id, List<Vector3> positions, DebugLayers layerType, DebugTileTypes tileType)
@@ -158,6 +200,11 @@ public class DebugManager : NetworkEntity
 
     public void SetDebugTile(int id, Vector3 position, DebugLayers layerType, DebugTileTypes tileType)
     {
+        if (!debugEnabled)
+        {
+            return;
+        }
+
         List<Vector3Int> tileGroup;
         if (!DebugTileGroups.TryGetValue((id, layerType), out tileGroup))
         {

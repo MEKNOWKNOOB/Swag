@@ -72,7 +72,7 @@ public class Pathing : NetworkComponent
             Vector3Int currTilePos = aTiles.Dequeue();
             if (currTilePos == goalPos)
             {
-                if (DebugManager.Instance != null)
+                if (DebugManager.Instance != null && DebugManager.Instance.GetDebugEnabled())
                 {
                     DebugManager.Instance.ClearDebugTiles(gameObject.GetInstanceID(), DebugManager.DebugLayers.Pathing);
                     SetDebugPath(cPath, closestTilePos, DebugManager.DebugTileTypes.Red);
@@ -81,7 +81,7 @@ public class Pathing : NetworkComponent
             }
             if (DistanceSquared(goalPos, closestTilePos) < targetRadius)
             {
-                if (DebugManager.Instance != null)
+                if (DebugManager.Instance != null && DebugManager.Instance.GetDebugEnabled())
                 {
                     DebugManager.Instance.ClearDebugTiles(gameObject.GetInstanceID(), DebugManager.DebugLayers.Pathing);
                     SetDebugPath(cPath, closestTilePos, DebugManager.DebugTileTypes.Blue);
