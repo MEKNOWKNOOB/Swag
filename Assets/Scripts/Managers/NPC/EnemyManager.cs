@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 
-public class GameManager : NetworkEntity
+public class EnemyManager : NetworkEntity
 {
-    public static GameManager Instance;
-
-    public List<LocalPlayer> Players = new();
+    public static EnemyManager Instance;
+    public List<Enemy> Enemies = new();
 
     void Awake()
     {

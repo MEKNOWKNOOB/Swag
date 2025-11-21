@@ -13,6 +13,8 @@ public class Enemy : NetworkEntity
         {
             NetworkObject.ChangeOwnership(Unity.Netcode.NetworkManager.Singleton.LocalClientId);
         }
+        
+        EnemyManager.Instance.Enemies.Add(this);
     }
 
     void Update()
