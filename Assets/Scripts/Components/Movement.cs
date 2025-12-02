@@ -45,7 +45,7 @@ public class Movement : NetworkComponent
 
         if (InputManager.Instance.sprintBool == true)
         {
-            Speed = 4000f;
+            Speed = 2000f;
             Debug.Log(Speed);
 
         }
