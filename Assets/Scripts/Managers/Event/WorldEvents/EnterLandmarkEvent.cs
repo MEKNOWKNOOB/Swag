@@ -1,11 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnterLandmarkEvent : Event
 {
-    override public void TriggerEvent()
-    {
-        
-    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,5 +14,13 @@ public class EnterLandmarkEvent : Event
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            
+        }
     }
 }
