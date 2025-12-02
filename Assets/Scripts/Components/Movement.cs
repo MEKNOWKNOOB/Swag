@@ -42,6 +42,20 @@ public class Movement : NetworkComponent
         {
             Move(Direction);
         }
+
+        if (InputManager.Instance.sprintBool == true)
+        {
+            Speed = 4000f;
+            Debug.Log(Speed);
+
+        }
+        if(InputManager.Instance.sprintRelease == true)
+        {
+            Speed = 1000f;
+            Debug.Log(Speed);
+        }
+
+
     }
 
 
@@ -56,10 +70,15 @@ public class Movement : NetworkComponent
             return transform.position;
         }
 
+        
+
         // Instant Client Movement
         if (IsClient && !IsServer)
         {
+           
             rb.AddForce(Time.deltaTime * Speed * ((WorldTileMap)WorldManager.Instance.NetworkComponents["WorldTileMap"]).GetTileDataWalkSpeed("Ground", Entity.transform.position) * dir, ForceMode2D.Impulse);
+            
+            
         }
 
         // Update Server
