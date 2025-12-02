@@ -44,6 +44,9 @@ TagManager:
   - name: Ground
     uniqueID: 2472024963
     locked: 0
+  - name: Foliage
+    uniqueID: 99853649
+    locked: 0
   - name: WalkInfront
     uniqueID: 996203417
     locked: 0

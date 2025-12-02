@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f660f13df2f89da4dbcbee3bfe3778c4
+guid: 541c8832f8dccec4190144858c59e5b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6215267202064938543
-    second: Tree1_0
+      213: -7030467956848522428
+    second: Green_Test_Flower_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree1_0
+      name: Green_Test_Flower_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 10
         y: 0
-        width: 83
-        height: 94
+        width: 11
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2677332790114650800000000000000
-      internalID: 6215267202064938543
+      spriteID: 44b074b64a2ce6e90800000000000000
+      internalID: -7030467956848522428
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tree1_0: 6215267202064938543
+      Green_Test_Flower_0: -7030467956848522428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
