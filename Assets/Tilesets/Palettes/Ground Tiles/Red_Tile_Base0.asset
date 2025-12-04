@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc07278b04c8db14382e223789277559, type: 3}
-  m_Name: Test 3
+  m_Name: Red_Tile_Base0
   m_EditorClassIdentifier: Assembly-CSharp::CustomTile
-  m_Sprite: {fileID: 7582473836294218278, guid: 0bb3b4cda0444a74c9329c79d8a0d7b0, type: 3}
+  m_Sprite: {fileID: 4233738965393334873, guid: 3dda224fe485e7e41b9734b96cf788df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -35,7 +35,8 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   TileData:
-    walkable: 1
-    walkSpeed: 1
-    pathingCost: 1
-    maxHealth: 1
+    walkable: 0
+    walkSpeed: 0
+    pathingCost: 0
+    maxHealth: 0
+    safe: 0
