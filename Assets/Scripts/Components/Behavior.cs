@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using Unity.Services.Lobbies.Models;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 public class Behavior : NetworkComponent
@@ -13,9 +10,9 @@ public class Behavior : NetworkComponent
     public Vector2 NextMove()
     {
         LocalPlayer targetPlayer = null;
-        foreach(LocalPlayer player in GameManager.Instance.Players)
+        foreach (LocalPlayer player in GameManager.Instance.Players)
         {
-            if(targetPlayer == null || (targetPlayer.transform.position-Entity.transform.position).sqrMagnitude > (player.transform.position-Entity.transform.position).sqrMagnitude)
+            if (targetPlayer == null || (targetPlayer.transform.position - Entity.transform.position).sqrMagnitude > (player.transform.position - Entity.transform.position).sqrMagnitude)
             {
                 targetPlayer = player;
             }

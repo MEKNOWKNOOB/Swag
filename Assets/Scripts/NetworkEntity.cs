@@ -9,6 +9,8 @@ public class NetworkEntity : NetworkBehaviour
     // {"RefName", NetworkComponent}
     public Dictionary<string, NetworkComponent> NetworkComponents;
 
+    [Header("Base")]
+    public string Name;
     [SerializeField] new public Transform transform = null;
 
     // In Child Classes, override and call base.Start()
