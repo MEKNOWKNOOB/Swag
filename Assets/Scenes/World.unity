@@ -34403,8 +34403,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   ShowTopMostFoldoutHeaderGroup: 1
+  Name: 
   transform: {fileID: 0}
   Players: []
+  Difficulty: 0
 --- !u!1 &1747755302
 GameObject:
   m_ObjectHideFlags: 0
@@ -34653,6 +34655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldManager
   ShowTopMostFoldoutHeaderGroup: 1
+  Name: 
   transform: {fileID: 0}
 --- !u!114 &1802558835
 MonoBehaviour:
