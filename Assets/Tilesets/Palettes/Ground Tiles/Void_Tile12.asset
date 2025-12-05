@@ -35,7 +35,8 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   TileData:
-    walkable: 0
-    walkSpeed: 0
-    pathingCost: 0
-    maxHealth: 0
+    walkable: 1
+    walkSpeed: 1
+    pathingCost: 1
+    maxHealth: 1
+    safe: 0
