@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 103688335}
   - component: {fileID: 103688333}
   - component: {fileID: 103688334}
+  - component: {fileID: 103688336}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -365,6 +366,8 @@ MonoBehaviour:
   Direction: {x: 0, y: 0}
   Name: 
   transform: {fileID: 0}
+  SurvivalTime:
+    m_InternalValue: 0
 --- !u!114 &103688334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +410,21 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &103688336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103688330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349a9667ddb1e4b49a08468f2bfd9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldPower
+  ShowTopMostFoldoutHeaderGroup: 1
+  percentageBase: 0.06
+  powerAllocateMax: 2
 --- !u!1 &198934373
 GameObject:
   m_ObjectHideFlags: 0

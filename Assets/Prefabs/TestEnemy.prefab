@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1876998375
+  GlobalObjectIdHash: 2380879055
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   ShowTopMostFoldoutHeaderGroup: 1
-  Speed: 500
+  Speed: 250
 --- !u!114 &5722726264251269751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Behavior
   ShowTopMostFoldoutHeaderGroup: 1
   TargetPlayer: {fileID: 0}
-  AttackRange: 1
+  AttackRange: 2
 --- !u!114 &4972149417605268764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tool
   ShowTopMostFoldoutHeaderGroup: 1
   Damage: 1
-  Range: 0
+  Range: 1
   Durability: -1
   UseTime: 1
 --- !u!114 &9057704153752682486

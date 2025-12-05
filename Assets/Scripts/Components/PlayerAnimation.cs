@@ -1,24 +1,31 @@
+using Unity.Netcode;
 using UnityEngine;
 
 
-public class PlayerAnimation : MonoBehaviour
+public class PlayerAnimation : NetworkComponent
 {
     [SerializeField] private Animator playerAnimator;
-    private Movement playerMovement;
+
     private Vector2 moveDirection;
     private SpriteRenderer sr;
+
+    void Awake()
+    {
+        RefName = "Animator";
+    }
+
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
-        playerMovement = GetComponent<Movement>();
         sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        moveDirection = playerMovement.Direction;
-
+        if(!IsOwner) return;
+        
+        moveDirection = Entity.Direction;
         // Flip visually only
         if (moveDirection.x != 0)
             sr.flipX = moveDirection.x > 0;
@@ -34,8 +41,9 @@ public class PlayerAnimation : MonoBehaviour
     {
         playerAnimator.SetFloat("MoveDirectionX", moveDirection.x);
         playerAnimator.SetFloat("MoveDirectionY", moveDirection.y);
+        PlayAnimationServerRpc(moveDirection.x, moveDirection.y);
     }
-    
+
     public void UpdateMoveDirection()
     {
         if (moveDirection.x == 0 && moveDirection.y != 0)
@@ -46,5 +54,20 @@ public class PlayerAnimation : MonoBehaviour
         {
             playerAnimator.SetFloat("MoveDirection", 1);
         }
+    }
+
+    [ServerRpc]
+    public void PlayAnimationServerRpc(float dirX, float dirY)
+    {
+        SyncAnimationClientRpc(dirX, dirY);
+    }
+
+    [ClientRpc]
+    public void SyncAnimationClientRpc(float dirX, float dirY)
+    {
+        playerAnimator.SetFloat("MoveDirectionX", dirX);
+        playerAnimator.SetFloat("MoveDirectionY", dirY);
+        if (dirX != 0)
+            sr.flipX = dirX > 0;
     }
 }

@@ -71,6 +71,12 @@ public class Health : NetworkComponent
     [ServerRpc]
     public void SubmitKillServerRpc()
     {
+        // patch work but it is what it is
+        if(gameObject.GetComponent<LocalPlayer>() != null)
+        {
+            GameManager.Instance.Players.Remove(gameObject.GetComponent<LocalPlayer>());
+        }
+        
         Destroy(gameObject);
     }
 }

@@ -5,7 +5,6 @@ public class LocalPlayer : NetworkEntity
     protected override void Start()
     {
         base.Start();
-        // GameManager.Instance.Players.Add(this);
         GameManager.Instance.AddPlayer(this);
     }
 
@@ -25,7 +24,7 @@ public class LocalPlayer : NetworkEntity
     {
         if (!IsOwner) return;
 
+        Direction = InputManager.Instance.MoveVector;
         ((Movement)NetworkComponents["Movement"]).Direction = InputManager.Instance.MoveVector;
-        //((Health)NetworkComponents["Health"]) = ;
     }
 }
