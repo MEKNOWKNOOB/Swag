@@ -30,7 +30,9 @@ public class ItemManager : NetworkEntity
         base.Start();
 
         ItemDatas?.InitializeItemDatas();
+
         Recipes?.InitializeRecipes();
+        Recipes?.GenerateAllRecipeLineUIs();
 
         GameManager.Instance.OnPlayerAdded += AddPlayer;
     }
@@ -55,6 +57,11 @@ public class ItemManager : NetworkEntity
 
         AddItem(player, items.GetItemData("BareHands"), 1);
         EquipItem(player, items.GetItemData("BareHands"), 0);
+
+        AddItem(player, items.GetItemData("Wood"), 5);
+        AddItem(player, items.GetItemData("Flesh"), 4);
+        AddItem(player, items.GetItemData("Fungus"), 3);
+        AddItem(player, items.GetItemData("Metal"), 2);
 
         LogPlayerStorage(player);
     }
@@ -215,6 +222,7 @@ public class ItemManager : NetworkEntity
 
         int newCount = Mathf.Max(0, GetItemDataCount(player, itemData) + change);
 
+        PlayerStorage[player].Remove(itemData);
         PlayerStorage[player].Add(itemData, newCount);
     }
 
@@ -249,7 +257,7 @@ public class ItemManager : NetworkEntity
         Debug.Log("Storage:");
         foreach (ItemData itemData in PlayerStorage[player].Keys)
         {
-            Debug.Log(string.Format("Item <{0}>: {1}x", itemData, PlayerStorage[player][itemData]));
+            Debug.Log(string.Format("Item <{0}>: {1}x", itemData.ItemName, PlayerStorage[player][itemData]));
         }
 
         Debug.Log("Hotbar:");
