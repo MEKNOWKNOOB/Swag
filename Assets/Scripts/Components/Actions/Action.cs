@@ -20,7 +20,7 @@ public class Action : NetworkComponent
     /// <param name="user"> user is NOT the Item class, it's the actual User, Tool should work without an Item class as long its part of an Entity</param>
     public virtual void Active(Tool tool, NetworkEntity user)
     {
-        if (Time.time < useStartTime + useTime) return; // Still Using
+        if (Time.time < useStartTime + useTime * tool.SpeedMultiplier) return; // Still Using
         useStartTime = Time.time;
 
         // Make a child class with what you need (animations, hurtboxes, turning left at the crossroads), just call base first
@@ -34,7 +34,7 @@ public class Action : NetworkComponent
     /// <param name="direction"> direction of use</param>
     public virtual void Active(Tool tool, NetworkEntity user, Vector2 direction)
     {
-        if (Time.time < useStartTime + useTime) return; // Still Using
+        if (Time.time < useStartTime + useTime * tool.SpeedMultiplier) return; // Still Using
         useStartTime = Time.time;
 
         // Make a child class with what you need (animations, hurtboxes, turning left at the crossroads), just call base first
