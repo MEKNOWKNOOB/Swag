@@ -58,6 +58,15 @@ public class RecipesContainer : MonoBehaviour
             .AddSprite(CraftingRecipeSprites[1])
             );
 
+        AddRecipe(new CraftingRecipe("EnhancedSword", RecipeType.Assemble, "Enhanced Sword")
+            .AddInput(items.GetItemData("Wood"), 2)
+            .AddInput(items.GetItemData("Metal"), 3)
+            .AddInput(items.GetItemData("Flesh"), 5)
+            .AddOutput(items.GetItemData("EnhancedSword"), 1)
+            .AddSprite(CraftingRecipeSprites[2])
+            );
+
+
         /*
         AddRecipe(new CraftingRecipe("FleshSword", RecipeType.Assemble, "Flesh Sword")
             .AddInput(items.GetItemData("Wood"), 2)
