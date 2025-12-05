@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype/DebugTilemapTest.unity
     guid: 54f2cb2ba6d5ce44fa4cd855e8d67977
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: b2b098a0ec402ae4b95619c2ad536e08
+  - enabled: 1
     path: Assets/Scenes/World.unity
     guid: c3ab7573fa2031542b1eba58740fb303
   m_configObjects:
