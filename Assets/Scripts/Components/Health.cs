@@ -6,6 +6,10 @@ public class Health : NetworkComponent
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private NetworkVariable<int> HP = new(writePerm: NetworkVariableWritePermission.Server);
     [SerializeField] private NetworkVariable<int> MaxHP = new(writePerm: NetworkVariableWritePermission.Server);
+
+    public delegate void SourceHealthChangeCallback(int health);
+    public event SourceHealthChangeCallback SourceHealthChange;
+
     UnityEvent BeforeDeath;
     UnityEvent AfterDeath;
 
@@ -48,6 +52,14 @@ public class Health : NetworkComponent
     public void ChangeHealth(int change)
     {
         HP.Value += change;
+        // HealthChange?.Invoke(change);
+    }
+
+
+    public void ChangeHealthOwner(int change)
+    {
+        HP.Value += change;
+        SourceHealthChange?.Invoke(change);
     }
     public void ChangeMaxHealth(int change)
     {

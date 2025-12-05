@@ -36,10 +36,12 @@ public class RecipesContainer : MonoBehaviour
             .AddOutput(items.GetItemData("TestItem3"), 1)
             );
 
+        /*
         AddRecipe(new CraftingRecipe("TestWeapon", RecipeType.Upgrade)
             .AddInput(items.GetItemData("BareHands"), 1)
             .AddOutput(items.GetItemData("TestWeapon"), 1)
             );
+        */
     }
 
     public void AddRecipe(CraftingRecipe craftingRecipe)

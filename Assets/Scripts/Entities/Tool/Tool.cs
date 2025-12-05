@@ -18,6 +18,7 @@ public class Tool : NetworkComponent
     /// <param name="user"> user is NOT the Item class, it's the actual User, Tool should work without an Item class as long its part of an Entity</param>
     public void Use(NetworkEntity user)
     {
+        Debug.Log(Entity);
         ((Action)Entity.NetworkComponents["Action"]).Active(this, user);
     }
 
