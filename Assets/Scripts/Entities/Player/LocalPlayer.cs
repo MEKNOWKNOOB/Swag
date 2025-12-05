@@ -38,7 +38,7 @@ public class LocalPlayer : NetworkEntity
         if (InputManager.Instance.AttackBool)
         {
             // If tool exists, use it
-            activeTool?.Use(this);
+            activeTool?.Use(this, Direction);
         }
     }
 
@@ -46,7 +46,7 @@ public class LocalPlayer : NetworkEntity
     {
         if (!IsOwner) return;
 
-        Direction = InputManager.Instance.MoveVector;
+        if (InputManager.Instance.MoveVector != Vector2.zero) Direction = InputManager.Instance.MoveVector;
         ((Movement)NetworkComponents["Movement"]).Direction = InputManager.Instance.MoveVector;
     }
 }
