@@ -3,6 +3,8 @@ using UnityEngine;
 public class Tool : NetworkComponent
 {
     public int Durability = -1;
+    public float DamageMultiplier = 1.0f;
+    public float SpeedMultiplier = 1.0f;
     
     void Awake()
     {
