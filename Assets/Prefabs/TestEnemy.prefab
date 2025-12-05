@@ -43,12 +43,13 @@ GameObject:
   - component: {fileID: 657169808281365837}
   - component: {fileID: 1440591481141421715}
   - component: {fileID: 4026946555658684346}
+  - component: {fileID: -3171919342755160914}
   - component: {fileID: 6956848738938426477}
   - component: {fileID: 7498034310854060107}
   - component: {fileID: 1439236618323332806}
-  - component: {fileID: 5722726264251269751}
   - component: {fileID: 854472485878391000}
   - component: {fileID: 365777533777132896}
+  - component: {fileID: 5722726264251269751}
   - component: {fileID: 4972149417605268764}
   - component: {fileID: 9057704153752682486}
   - component: {fileID: 7040087568772783898}
@@ -122,7 +123,7 @@ SpriteRenderer:
   m_SortingLayerID: 516411563
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -1441084546493631207, guid: 2ae049e735063304980eff823829e02c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,7 +171,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -206,6 +207,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &-3171919342755160914
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420069508650382487}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 616c54faf39cfb24b9a8cfef99b93512, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6956848738938426477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2380879055
+  GlobalObjectIdHash: 1876998375
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -266,8 +289,8 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 0, y: 0.11986542, z: 0}
-      m_Extent: {x: 0.41345215, y: 0.35852814, z: 0}
+      m_Center: {x: 0.03125, y: 0, z: 0}
+      m_Extent: {x: 0.32499695, y: 0.41874695, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.05
     m_FlipX: 0
@@ -302,21 +325,6 @@ MonoBehaviour:
   transform: {fileID: 5141862965080737831}
   Difficulty: 0
   Power: 1
---- !u!114 &5722726264251269751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420069508650382487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87e6d06830d0134abb1affec88a1404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Behavior
-  ShowTopMostFoldoutHeaderGroup: 1
-  TargetPlayer: {fileID: 0}
-  AttackRange: 5
 --- !u!114 &854472485878391000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +352,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   ShowTopMostFoldoutHeaderGroup: 1
-  Speed: 300
+  Speed: 500
+--- !u!114 &5722726264251269751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420069508650382487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87e6d06830d0134abb1affec88a1404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Behavior
+  ShowTopMostFoldoutHeaderGroup: 1
+  TargetPlayer: {fileID: 0}
+  AttackRange: 1
 --- !u!114 &4972149417605268764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tool
   ShowTopMostFoldoutHeaderGroup: 1
   Damage: 1
-  Range: 1
+  Range: 0
   Durability: -1
   UseTime: 1
 --- !u!114 &9057704153752682486

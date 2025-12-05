@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   ShowTopMostFoldoutHeaderGroup: 1
+  Direction: {x: 0, y: 0}
   Name: 
   transform: {fileID: 0}
   Players: []
@@ -361,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldManager
   ShowTopMostFoldoutHeaderGroup: 1
+  Direction: {x: 0, y: 0}
   Name: 
   transform: {fileID: 0}
 --- !u!114 &103688334
@@ -10248,6 +10250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
   ShowTopMostFoldoutHeaderGroup: 1
+  Direction: {x: 0, y: 0}
   Name: EnemyManager
   transform: {fileID: 0}
   enemyReferences:
