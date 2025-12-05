@@ -11,12 +11,20 @@ public class InputManager : MonoBehaviour
     [NonSerialized] private InputAction debugAction;
     [NonSerialized] private InputAction sprintAction;
 
+    [NonSerialized] private InputAction hotbar1Action;
+    [NonSerialized] private InputAction hotbar2Action;
+    [NonSerialized] private InputAction hotbar3Action;
+
     public Vector2 MoveVector => moveAction.ReadValue<Vector2>(); // [x, z] floats
     public bool InteractBool => interactAction.WasPressedThisFrame();
     public bool DebugBool => debugAction.WasPressedThisFrame();
 
     public bool sprintBool => sprintAction.WasPressedThisFrame();
     public bool sprintRelease => sprintAction.WasReleasedThisFrame();
+
+    public bool Hotbar1Bool => hotbar1Action.WasPressedThisFrame();
+    public bool Hotbar2Bool => hotbar2Action.WasPressedThisFrame();
+    public bool Hotbar3Bool => hotbar3Action.WasPressedThisFrame();
 
     void Awake()
     {
@@ -31,6 +39,10 @@ public class InputManager : MonoBehaviour
         interactAction = InputSystem.actions.FindAction("Interact");
         debugAction = InputSystem.actions.FindAction("Debug");
         sprintAction = InputSystem.actions.FindAction("Sprint");
+
+        hotbar1Action = InputSystem.actions.FindAction("Hotbar1");
+        hotbar2Action = InputSystem.actions.FindAction("Hotbar2");
+        hotbar3Action = InputSystem.actions.FindAction("Hotbar3");
     }
 
     void Update()
