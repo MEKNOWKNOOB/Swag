@@ -59,7 +59,7 @@ public class Harvestable : NetworkEntity
         }
 
         // Give them resources
-        Debug.Log(string.Format("Gave {0} of {1} to {2}", ResourceCount, ResourceName, closest.gameObject.name));
+        // Debug.Log(string.Format("Gave {0} of {1} to {2}", ResourceCount, ResourceName, closest.gameObject.name));
         ItemManager.Instance.AddItem(closest, ItemDatasContainer.Instance.GetItemData(ResourceName), ResourceCount);
     }
 }

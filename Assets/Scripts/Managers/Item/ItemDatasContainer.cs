@@ -22,11 +22,7 @@ public class ItemDatasContainer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Go through and add all of the itemDatas that were only in the list
-        foreach (ItemData itemData in ItemDatas)
-        {
-            AddItemData(itemData);
-        }
+
     }
 
     public void InitializeItemDatas()
@@ -42,6 +38,15 @@ public class ItemDatasContainer : MonoBehaviour
         AddItemData(new ItemData("Metal", ItemType.Material, "Metal"));
         AddItemData(new ItemData("Flesh", ItemType.Material, "Flesh"));
         AddItemData(new ItemData("Fungus", ItemType.Material, "Fungus"));
+
+        // Go through and add all of the itemDatas that were only in the list
+        foreach (ItemData itemData in ItemDatas)
+        {
+            AddItemData(itemData);
+        }
+
+        //AddItemData(new ItemData("Sword", ItemType.Tool, "Sword"));
+        //AddItemData(new ItemData("MushroomStew", ItemType.Tool, "Mushroom Stew"));
     }
 
     public void AddItemData(ItemData itemData)

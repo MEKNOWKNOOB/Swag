@@ -16,6 +16,7 @@ public class ItemData
     [SerializeField] public string ItemName = "UnknownItem";
     [SerializeField] public GameObject ItemPrefab = null;
     [SerializeField] public string ItemDisplayName = "Unknown Item";
+    [SerializeField] public Sprite ItemSprite;
 
     public ItemData(string itemName, ItemType itemType, string itemDisplayName)
     {

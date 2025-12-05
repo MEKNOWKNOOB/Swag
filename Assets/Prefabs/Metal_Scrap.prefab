@@ -209,7 +209,7 @@ MonoBehaviour:
   Direction: {x: 0, y: 0}
   Name: 
   transform: {fileID: 0}
-  ResourceName: Unknown
+  ResourceName: Metal
   ResourceCount: 1
 --- !u!114 &1552867226033343722
 MonoBehaviour:

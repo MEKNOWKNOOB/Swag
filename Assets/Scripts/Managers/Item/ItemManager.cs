@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -105,6 +106,11 @@ public class ItemManager : NetworkEntity
 
     public ItemData GetHotbarItem(LocalPlayer player, int index)
     {
+        if (!PlayerHotbar[player].ContainsKey(index))
+        {
+            return null;
+        }
+
         return PlayerHotbar[player][index];
     }
 
@@ -117,6 +123,7 @@ public class ItemManager : NetworkEntity
             return;
         }
 
+        Debug.Log(itemData.ItemName);
         // Create a copy of the item prefab and attach it UNDER the player
         GameObject itemPrefab = Instantiate(itemData.ItemPrefab);
 
@@ -223,7 +230,24 @@ public class ItemManager : NetworkEntity
         int newCount = Mathf.Max(0, GetItemDataCount(player, itemData) + change);
 
         PlayerStorage[player].Remove(itemData);
-        PlayerStorage[player].Add(itemData, newCount);
+
+        if (newCount > 0)
+        {
+            PlayerStorage[player].Add(itemData, newCount);
+        }
+        else
+        {
+            DeactivateItem(player, itemData);
+            /*
+            List<int> keys = PlayerHotbar[player].Keys.ToList<int>();
+            foreach (int slot in keys)
+            {
+                if (PlayerHotbar[player][slot] == itemData)
+                {
+                }
+            }
+            */
+        }
     }
 
     public void AddItem(LocalPlayer player, ItemData itemData, int change)
@@ -283,6 +307,30 @@ public class ItemManager : NetworkEntity
 
         RemoveItems(player, recipe.RecipeInput);
         AddItems(player, recipe.RecipeOutput);
+
+        // Automatically equip the new items
+        // Equip melee weapon(s)
+        foreach (ItemData itemData in recipe.RecipeOutput.Keys)
+        {
+            // If it's not mushroom stew, it must be a melee weapon.
+            // Scuffed, but we've got one hour until we present, so!!!!
+            if (itemData.ItemType == ItemType.Tool && itemData.ItemName != "MushroomStew")
+            {
+                EquipItem(player, itemData, 0);
+            }
+        }
+
+        // Equip mushroom stew
+        foreach (ItemData itemData in recipe.RecipeOutput.Keys)
+        {
+            // If it's not mushroom stew, it must be a melee weapon.
+            // Scuffed, but we've got one hour until we present, so!!!!
+            if (itemData.ItemType == ItemType.Tool && itemData.ItemName == "MushroomStew")
+            {
+                EquipItem(player, itemData, 2);
+            }
+        }
+
 
         return true;
     }

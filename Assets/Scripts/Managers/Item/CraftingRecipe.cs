@@ -19,6 +19,7 @@ public class CraftingRecipe
 
     [NonSerialized] public Dictionary<ItemData, int> RecipeInput = new Dictionary<ItemData, int>();
     [NonSerialized] public Dictionary<ItemData, int> RecipeOutput = new Dictionary<ItemData, int>();
+    public Sprite RecipeSprite = null;
 
     public CraftingRecipe(string recipeName, RecipeType recipeType, string recipeDisplayName)
     {
@@ -36,6 +37,12 @@ public class CraftingRecipe
     public CraftingRecipe AddOutput(ItemData itemData, int count)
     {
         RecipeOutput.Add(itemData, count);
+        return this;
+    }
+
+    public CraftingRecipe AddSprite(Sprite sprite)
+    {
+        RecipeSprite = sprite;
         return this;
     }
 }

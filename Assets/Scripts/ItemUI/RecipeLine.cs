@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RecipeLine : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class RecipeLine : MonoBehaviour
     public TextMeshProUGUI FungusText;
     public TextMeshProUGUI MetalText;
     public TextMeshProUGUI OutputText;
+
+    public Image RecipeOutputImage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +36,7 @@ public class RecipeLine : MonoBehaviour
         FungusText.text = craftingRecipe.RecipeInput.GetValueOrDefault(ItemDatasContainer.Instance.GetItemData("Fungus"), 0).ToString();
         MetalText.text = craftingRecipe.RecipeInput.GetValueOrDefault(ItemDatasContainer.Instance.GetItemData("Metal"), 0).ToString();
         OutputText.text = craftingRecipe.RecipeDisplayName;
+        RecipeOutputImage.sprite = craftingRecipe.RecipeSprite;
     }
 
     public void AttemptCraftingRecipe()
