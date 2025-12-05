@@ -199,7 +199,7 @@ MonoBehaviour:
   Direction: {x: 0, y: 0}
   Name: 
   transform: {fileID: 0}
-  ResourceName: Unknown
+  ResourceName: Fungus
   ResourceCount: 1
 --- !u!114 &5502351091460934304
 MonoBehaviour:

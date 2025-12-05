@@ -8,6 +8,7 @@ public class RecipesContainer : MonoBehaviour
 
     [SerializeField] public List<CraftingRecipe> CraftingRecipes = new List<CraftingRecipe>();
     [NonSerialized] public Dictionary<string, CraftingRecipe> CraftingRecipesByName = new Dictionary<string, CraftingRecipe>();
+    public List<Sprite> CraftingRecipeSprites = new List<Sprite>();
 
     public GameObject RecipeLinePrefab;
     public GameObject CraftingMenu;
@@ -41,14 +42,29 @@ public class RecipesContainer : MonoBehaviour
             );
         */
 
-        AddRecipe(new CraftingRecipe("Wooden Sword", RecipeType.Assemble, "Wooden Sword")
+        Debug.Log(ItemDatasContainer.Instance.GetItemData("Wood"));
+        Debug.Log(ItemDatasContainer.Instance.GetItemData("Sword"));
+
+        AddRecipe(new CraftingRecipe("Sword", RecipeType.Assemble, "Sword")
             .AddInput(items.GetItemData("Wood"), 2)
+            .AddOutput(items.GetItemData("Sword"), 1)
+            .AddSprite(CraftingRecipeSprites[0])
             );
 
-        AddRecipe(new CraftingRecipe("Flesh Sword", RecipeType.Assemble, "Flesh Sword")
+        AddRecipe(new CraftingRecipe("MushroomStew", RecipeType.Assemble, "Mushroom Stew")
+            .AddInput(items.GetItemData("Wood"), 1)
+            .AddInput(items.GetItemData("Fungus"), 2)
+            .AddOutput(items.GetItemData("MushroomStew"), 1)
+            .AddSprite(CraftingRecipeSprites[1])
+            );
+
+        /*
+        AddRecipe(new CraftingRecipe("FleshSword", RecipeType.Assemble, "Flesh Sword")
             .AddInput(items.GetItemData("Wood"), 2)
             .AddInput(items.GetItemData("Flesh"), 4)
+            //.AddSprite(CraftingRecipeSprites[2])
             );
+        */
 
         /*
         AddRecipe(new CraftingRecipe("TestWeapon", RecipeType.Upgrade)
@@ -73,7 +89,7 @@ public class RecipesContainer : MonoBehaviour
 
     public void GenerateAllRecipeLineUIs()
     {
-        float yPos = -25;
+        float yPos = -37;
         float yOffset = -50;
         int index = 0;
         foreach (CraftingRecipe recipe in CraftingRecipes)
@@ -81,7 +97,7 @@ public class RecipesContainer : MonoBehaviour
             GameObject lineObj = GenerateRecipeLineUI(recipe);
 
             float currentXPos = lineObj.GetComponent<RectTransform>().rect.position.x;
-            currentXPos = 180; // For now, just hardcode it
+            currentXPos = 170; // For now, just hardcode it
             float currentYPos = yPos + yOffset * index;
 
             Vector2 position = new Vector2(currentXPos, currentYPos);
@@ -96,8 +112,15 @@ public class RecipesContainer : MonoBehaviour
 
     public void AddRecipe(CraftingRecipe craftingRecipe)
     {
-        CraftingRecipes.Add(craftingRecipe);
-        CraftingRecipesByName.Add(craftingRecipe.RecipeName, craftingRecipe);
+        if (!CraftingRecipes.Contains(craftingRecipe))
+        {
+            CraftingRecipes.Add(craftingRecipe);
+        }
+
+        if (!CraftingRecipesByName.ContainsKey(craftingRecipe.RecipeName))
+        {
+            CraftingRecipesByName.Add(craftingRecipe.RecipeName, craftingRecipe);
+        }
     }
 
     public CraftingRecipe GetRecipe(string recipeName)

@@ -49,6 +49,18 @@ public class GameManager : NetworkEntity
         return null;
     }
 
+    public LocalPlayer GetPlayerByName(string user)
+    {
+        foreach (LocalPlayer player in Players)
+        {
+            if (player.gameObject.name == user)
+            {
+                return player;
+            }
+        }
+        return null;
+    }
+
     void Update()
     {
 

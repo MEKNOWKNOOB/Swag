@@ -254,6 +254,7 @@ MonoBehaviour:
   transform: {fileID: 0}
   Players: []
   Difficulty: 0
+  RespawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &86861305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,6 +476,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipesContainer
   CraftingRecipes: []
+  CraftingRecipeSprites:
+  - {fileID: 21300000, guid: b7772eee8eae41048aeb00f430b12e4e, type: 3}
+  - {fileID: 21300000, guid: c89571f38967ebb4fb55cbe699b8ef72, type: 3}
   RecipeLinePrefab: {fileID: 104988140999708227, guid: 515541680e0ad6e46a512994156e014c, type: 3}
   CraftingMenu: {fileID: 912648270}
 --- !u!114 &147960666
@@ -494,6 +498,17 @@ MonoBehaviour:
     ItemName: BareHands
     ItemPrefab: {fileID: 2158869768349613014, guid: 1d86e7bd228c94845bf707079d78d92b, type: 3}
     ItemDisplayName: 
+    ItemSprite: {fileID: 0}
+  - ItemType: 2
+    ItemName: Sword
+    ItemPrefab: {fileID: 2158869768349613014, guid: 02c1b04e3304a44428e695371c775867, type: 3}
+    ItemDisplayName: 
+    ItemSprite: {fileID: 21300000, guid: b7772eee8eae41048aeb00f430b12e4e, type: 3}
+  - ItemType: 2
+    ItemName: MushroomStew
+    ItemPrefab: {fileID: 2158869768349613014, guid: d7231f3d9e2939a47bf27fd087783030, type: 3}
+    ItemDisplayName: 
+    ItemSprite: {fileID: 21300000, guid: c89571f38967ebb4fb55cbe699b8ef72, type: 3}
 --- !u!1 &198934373
 GameObject:
   m_ObjectHideFlags: 0
@@ -10889,6 +10904,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1275448610903984322, guid: d4334cee773996b42939148786380c94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585900656272735651, guid: d4334cee773996b42939148786380c94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836064577640376478, guid: d4334cee773996b42939148786380c94, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836064577640376478, guid: d4334cee773996b42939148786380c94, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063485343228319967, guid: d4334cee773996b42939148786380c94, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
