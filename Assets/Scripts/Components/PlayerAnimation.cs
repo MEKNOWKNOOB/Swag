@@ -25,7 +25,7 @@ public class PlayerAnimation : NetworkComponent
     {
         if(!IsOwner) return;
         
-        moveDirection = Entity.Direction;
+        moveDirection = InputManager.Instance.MoveVector;
         // Flip visually only
         if (moveDirection.x != 0)
             sr.flipX = moveDirection.x > 0;

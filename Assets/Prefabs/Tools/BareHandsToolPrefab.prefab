@@ -72,10 +72,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tool
   ShowTopMostFoldoutHeaderGroup: 1
-  Damage: 0
-  Range: 0
+  Damage: 1
+  Range: 1
   Durability: -1
-  UseTime: 0
+  UseTime: 0.2
 --- !u!114 &-2860058791961599106
 MonoBehaviour:
   m_ObjectHideFlags: 0
