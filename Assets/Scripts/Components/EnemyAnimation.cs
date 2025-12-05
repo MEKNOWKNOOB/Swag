@@ -8,7 +8,7 @@ public class EnemyAnimation : NetworkComponent
     private Vector2 moveDirection;
     void Awake()
     {
-        RefName = "animation";
+        RefName = "Animator";
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
