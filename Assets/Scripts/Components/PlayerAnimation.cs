@@ -1,22 +1,29 @@
 using UnityEngine;
 
+
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator playerAnimator;
     private Movement playerMovement;
     private Vector2 moveDirection;
-
+    private SpriteRenderer sr;
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
         playerMovement = GetComponent<Movement>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         moveDirection = playerMovement.Direction;
-        if(moveDirection != Vector2.zero)
+
+        // Flip visually only
+        if (moveDirection.x != 0)
+            sr.flipX = moveDirection.x > 0;
+
+        if (moveDirection != Vector2.zero)
         {
             UpdateMoveDirection();
         }
