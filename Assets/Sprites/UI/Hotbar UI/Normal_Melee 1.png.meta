@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b261e9eb2d1a9ec4b9d9187533438683
+guid: b7772eee8eae41048aeb00f430b12e4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8392367366032998432
-    second: Normal_Melee_0
+      213: 2005551744596253715
+    second: Normal_Melee 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Normal_Melee_0
+      name: Normal_Melee 1_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 1
-        width: 31
+        width: 27
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0204afc97ada77470800000000000000
-      internalID: 8392367366032998432
+      spriteID: 31c13539fa625db10800000000000000
+      internalID: 2005551744596253715
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Normal_Melee_0: 8392367366032998432
+      Normal_Melee 1_0: 2005551744596253715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
