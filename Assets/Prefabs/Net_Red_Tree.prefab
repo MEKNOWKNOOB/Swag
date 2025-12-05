@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7813797672262203798}
-  - component: {fileID: 2934253297162067518}
   - component: {fileID: 4592703396403510223}
   m_Layer: 0
   m_Name: Net_Red_Tree
@@ -33,31 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2934253297162067518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4174568640206607329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 412830970
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!114 &4592703396403510223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad8d79a780d9534db30249756436c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetBridge
-  ShowTopMostFoldoutHeaderGroup: 1
   prefab: {fileID: 750854813833881516, guid: 46e67276d6f5a2549b4214d6d99b1b95, type: 3}

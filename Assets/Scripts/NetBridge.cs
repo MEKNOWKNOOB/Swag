@@ -1,13 +1,13 @@
 using UnityEngine;
 using Unity.Netcode;
 
-public class NetBridge : NetworkBehaviour
+public class NetBridge : MonoBehaviour
 {
     public GameObject prefab;
 
-    public override void OnNetworkSpawn()
+    public void Start()
     {
-        if (IsServer)
+        if (NetworkManager.Singleton.IsServer)
         {
             Instantiate(prefab).GetComponent<NetworkObject>().Spawn();
         }
