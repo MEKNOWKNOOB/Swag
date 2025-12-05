@@ -237,6 +237,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 2, y: -10, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 43
+      m_TileSpriteIndex: 39
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -11, y: -9, z: 0}
     second:
       serializedVersion: 2
@@ -785,6 +795,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: a6f926291421bd845b1b1f062312a4e6, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 960a2caa579855a459b092d26894b701, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 4eb945fc0483d5a46b1931e1747cebff, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 5
     m_Data: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
@@ -864,8 +876,10 @@ Tilemap:
     m_Data: {fileID: 911656936, guid: ae149a7311929604ebf4b99dce6d8ea5, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 4d30e267a151ade48b4a2e37a2a7dfb8, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 5d3cf574af5f7d44a88f1d7a8eda12e2, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 61
+  - m_RefCount: 62
     m_Data:
       e00: 1
       e01: 0
@@ -884,7 +898,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 55
+  - m_RefCount: 56
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0, g: 0.062745094, b: 1, a: 1}
@@ -987,7 +1001,19 @@ TilemapRenderer:
   m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &5761979129842313109
+--- !u!114 &660336387429910682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &988108449919750908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1002,15 +1028,3 @@ MonoBehaviour:
   cellSizing: 100
   m_TransparencySortMode: 3
   m_TransparencySortAxis: {x: 0, y: 1, z: -0.26}
---- !u!114 &7643008827572718380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
