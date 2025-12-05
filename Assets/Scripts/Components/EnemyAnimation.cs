@@ -8,15 +8,15 @@ public class EnemyAnimation : NetworkComponent
     private Vector2 moveDirection;
     void Awake()
     {
-        enemyAnimator = GetComponent<Animator>();
-        enemyMovement = GetComponent<Movement>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        RefName = "animation";
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        enemyAnimator = GetComponent<Animator>();
+        enemyMovement = GetComponent<Movement>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
