@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 public class EnemyAnimation : NetworkComponent
@@ -8,7 +9,7 @@ public class EnemyAnimation : NetworkComponent
     private Vector2 moveDirection;
     void Awake()
     {
-        RefName = "animation";
+        RefName = "Animator";
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +23,7 @@ public class EnemyAnimation : NetworkComponent
     // Update is called once per frame
     void Update()
     {
+        if(!IsOwner) return;
         moveDirection = enemyMovement.Direction;
 
         // Flip visually only
@@ -39,6 +41,7 @@ public class EnemyAnimation : NetworkComponent
     {
         enemyAnimator.SetFloat("MoveDirectionX", moveDirection.x);
         enemyAnimator.SetFloat("MoveDirectionY", moveDirection.y);
+        PlayAnimationServerRpc(moveDirection.x, moveDirection.y);
     }
     
     public void UpdateMoveDirection()
@@ -51,5 +54,20 @@ public class EnemyAnimation : NetworkComponent
         {
             enemyAnimator.SetFloat("MoveDirection", 1);
         }
+    }
+
+    [ServerRpc]
+    public void PlayAnimationServerRpc(float dirX, float dirY)
+    {
+        SyncAnimationClientRpc(dirX, dirY);
+    }
+
+    [ClientRpc]
+    public void SyncAnimationClientRpc(float dirX, float dirY)
+    {
+        enemyAnimator.SetFloat("MoveDirectionX", dirX);
+        enemyAnimator.SetFloat("MoveDirectionY", dirY);
+        if (dirX != 0)
+            spriteRenderer.flipX = dirX > 0;
     }
 }

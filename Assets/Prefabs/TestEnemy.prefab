@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4972149417605268764}
   - component: {fileID: 9057704153752682486}
   - component: {fileID: 7040087568772783898}
+  - component: {fileID: 8591703284052348873}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Enemy
@@ -417,3 +418,17 @@ MonoBehaviour:
     m_InternalValue: 10
   MaxHP:
     m_InternalValue: 10
+--- !u!114 &8591703284052348873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420069508650382487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27163f80fa0c54647b486b9d3d01de8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  ShowTopMostFoldoutHeaderGroup: 1
+  enemyAnimator: {fileID: 0}

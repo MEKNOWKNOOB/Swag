@@ -333,6 +333,7 @@ MonoBehaviour:
   transform: {fileID: 0}
   Players: []
   Difficulty: 0
+  RespawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &86861305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11272,6 +11273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipesContainer
   CraftingRecipes: []
+  RecipeLinePrefab: {fileID: 0}
+  CraftingMenu: {fileID: 0}
 --- !u!114 &1466450065
 MonoBehaviour:
   m_ObjectHideFlags: 0

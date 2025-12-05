@@ -14,15 +14,17 @@ public enum RecipeType
 public class CraftingRecipe
 {
     [SerializeField] public string RecipeName = "UnknownRecipe";
+    [SerializeField] public string RecipeDisplayName = "Unknown";
     [SerializeField] public RecipeType RecipeType = RecipeType.None;
 
     [NonSerialized] public Dictionary<ItemData, int> RecipeInput = new Dictionary<ItemData, int>();
     [NonSerialized] public Dictionary<ItemData, int> RecipeOutput = new Dictionary<ItemData, int>();
 
-    public CraftingRecipe(string recipeName, RecipeType recipeType)
+    public CraftingRecipe(string recipeName, RecipeType recipeType, string recipeDisplayName)
     {
         this.RecipeName = recipeName;
         this.RecipeType = recipeType;
+        RecipeDisplayName = recipeDisplayName;
     }
 
     public CraftingRecipe AddInput(ItemData itemData, int count)

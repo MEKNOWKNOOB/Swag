@@ -88,7 +88,16 @@ public class Health : NetworkComponent
         {
             GameManager.Instance.Players.Remove(gameObject.GetComponent<LocalPlayer>());
         }
-        
-        Destroy(gameObject);
+        BeforeDeath.Invoke();
+        if(!Entity.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            transform.position = GameManager.Instance.RespawnPoint;
+            HP.Value = MaxHP.Value;
+        }
+        AfterDeath.Invoke();
     }
 }

@@ -9,6 +9,7 @@ public class GameManager : NetworkEntity
     [Header("GameManager")]
     public List<LocalPlayer> Players = new();
     public int Difficulty = 0;
+    public Vector3 RespawnPoint = Vector3.zero;
 
     public delegate void PlayerAddedHandler(LocalPlayer player);
 
@@ -34,6 +35,18 @@ public class GameManager : NetworkEntity
         Players.Add(player);
 
         OnPlayerAdded?.Invoke(player);
+    }
+
+    public LocalPlayer GetClientLocalPlayer()
+    {
+        foreach (LocalPlayer player in Players)
+        {
+            if (player.IsOwner)
+            {
+                return player;
+            }
+        }
+        return null;
     }
 
     void Update()
