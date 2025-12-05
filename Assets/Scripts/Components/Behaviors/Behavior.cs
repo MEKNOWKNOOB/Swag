@@ -2,23 +2,35 @@ using UnityEngine;
 
 public class Behavior : NetworkComponent
 {
+    public LocalPlayer TargetPlayer = null;
+    public float AttackRange = 1.0f;
+
     void Awake()
     {
         RefName = "Behavior";
     }
 
-    public Vector2 NextMove()
+    public Vector2 NextDirection()
     {
-        LocalPlayer targetPlayer = null;
         foreach (LocalPlayer player in GameManager.Instance.Players)
         {
-            if (targetPlayer == null || (targetPlayer.transform.position - Entity.transform.position).sqrMagnitude > (player.transform.position - Entity.transform.position).sqrMagnitude)
+            if (TargetPlayer == null || (TargetPlayer.transform.position - Entity.transform.position).sqrMagnitude > (player.transform.position - Entity.transform.position).sqrMagnitude)
             {
-                targetPlayer = player;
+                TargetPlayer = player;
             }
         }
 
-        return PathToPos(targetPlayer.transform.position);
+        return PathToPos(TargetPlayer.transform.position);
+    }
+
+    public bool NextAttack()
+    {
+        if (TargetPlayer == null) return false;
+        if((TargetPlayer.transform.position - Entity.transform.position).sqrMagnitude > Mathf.Pow(AttackRange, 2))
+        {
+            return false;
+        }
+        return true;
     }
 
     public Vector2 PathToPos(Vector2 pos /*, Dictionary<int, int> heuristics*/)

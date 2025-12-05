@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 6956848738938426477}
   - component: {fileID: 7498034310854060107}
   - component: {fileID: 1439236618323332806}
+  - component: {fileID: 5722726264251269751}
   - component: {fileID: 854472485878391000}
   - component: {fileID: 365777533777132896}
-  - component: {fileID: 5722726264251269751}
   - component: {fileID: 4972149417605268764}
   - component: {fileID: 9057704153752682486}
   - component: {fileID: 7040087568772783898}
@@ -302,6 +302,21 @@ MonoBehaviour:
   transform: {fileID: 5141862965080737831}
   Difficulty: 0
   Power: 1
+--- !u!114 &5722726264251269751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420069508650382487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87e6d06830d0134abb1affec88a1404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Behavior
+  ShowTopMostFoldoutHeaderGroup: 1
+  TargetPlayer: {fileID: 0}
+  AttackRange: 5
 --- !u!114 &854472485878391000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,20 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   ShowTopMostFoldoutHeaderGroup: 1
-  Speed: 500
---- !u!114 &5722726264251269751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420069508650382487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87e6d06830d0134abb1affec88a1404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Behavior
-  ShowTopMostFoldoutHeaderGroup: 1
+  Speed: 300
 --- !u!114 &4972149417605268764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,8 +358,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tool
   ShowTopMostFoldoutHeaderGroup: 1
-  Durability: -1
   Damage: 1
+  Range: 1
+  Durability: -1
   UseTime: 1
 --- !u!114 &9057704153752682486
 MonoBehaviour:

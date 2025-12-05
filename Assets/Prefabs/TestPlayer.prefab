@@ -526,9 +526,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   ShowTopMostFoldoutHeaderGroup: 1
   HP:
-    m_InternalValue: 15000
+    m_InternalValue: 20
   MaxHP:
-    m_InternalValue: 15000
+    m_InternalValue: 20
 --- !u!1001 &2293596243517798754
 PrefabInstance:
   m_ObjectHideFlags: 0

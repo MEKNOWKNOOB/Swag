@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Tool : NetworkComponent
 {
-    public int Durability = -1;
     public float Damage = 0.0f;
+    public float Range = 0.0f;
+    public int Durability = -1;
     public float UseTime = 0.0f;
     
     void Awake()

@@ -36,6 +36,6 @@ public class Action : NetworkComponent
         useStartTime = Time.time;
         return true;
 
-        // Make a child class with what you need (animations, hurtboxes, turning left at the crossroads), just call base first
+        // Make a child class with what you need (animations, hurtboxes, turning left at the crossroads), just call base first like this {if(!base.Active(tool, user)) return false;}
     }
 }

@@ -17,7 +17,7 @@ public class Enemy : NetworkEntity
         {
             NetworkObject.ChangeOwnership(Unity.Netcode.NetworkManager.Singleton.LocalClientId);
         }
-        
+
         EnemyManager.Instance.AllEnemies.Add(this);
     }
 
@@ -30,7 +30,10 @@ public class Enemy : NetworkEntity
     {
         if (!IsServer) return;
 
-       ((Movement)NetworkComponents["Movement"]).Direction = ((Behavior)NetworkComponents["Behavior"]).NextMove();
-       ((Tool)NetworkComponents["Tool"]).Use(this);
+
+        Vector2 currDirection = ((Behavior)NetworkComponents["Behavior"]).NextDirection();
+        if(currDirection != Vector2.zero) Direction = currDirection;
+        ((Movement)NetworkComponents["Movement"]).Direction = currDirection;
+        if(((Behavior)NetworkComponents["Behavior"]).NextAttack()) ((Tool)NetworkComponents["Tool"]).Use(this, Direction);
     }
 }

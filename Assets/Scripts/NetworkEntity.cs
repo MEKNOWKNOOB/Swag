@@ -8,7 +8,7 @@ public class NetworkEntity : NetworkBehaviour
 {
     // {"RefName", NetworkComponent}
     public Dictionary<string, NetworkComponent> NetworkComponents;
-    public Vector2Int Direction = Vector2Int.zero;
+    public Vector2 Direction = Vector2Int.zero;
 
     [Header("Base")]
     public string Name;
