@@ -12,9 +12,9 @@ public class TileData
         safe = other.safe;
     }
 
-    [SerializeField] public bool walkable;
-    [SerializeField] public float walkSpeed;
-    [SerializeField] public float pathingCost;
-    [SerializeField] public float maxHealth;
-    [SerializeField] public bool safe;
+    [SerializeField] public bool walkable = true;
+    [SerializeField] public float walkSpeed = 1;
+    [SerializeField] public float pathingCost = 1;
+    [SerializeField] public float maxHealth = 1;
+    [SerializeField] public bool safe = false;
 }

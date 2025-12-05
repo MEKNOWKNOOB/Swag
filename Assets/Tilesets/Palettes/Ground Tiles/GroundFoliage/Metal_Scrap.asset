@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc07278b04c8db14382e223789277559, type: 3}
-  m_Name: Red_Tile_Base0
+  m_Name: Metal_Scrap
   m_EditorClassIdentifier: Assembly-CSharp::CustomTile
-  m_Sprite: {fileID: 4233738965393334873, guid: 3dda224fe485e7e41b9734b96cf788df, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.20558915, g: 0.4716981, b: 0.3910832, a: 1}
   m_Transform:
     e00: 1
     e01: 0
@@ -31,12 +31,12 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 0}
+  m_InstancedGameObject: {fileID: 3636284394889960771, guid: c2811b3d4f6d7fc4287b44cc22784e00, type: 3}
   m_Flags: 1
   m_ColliderType: 1
   TileData:
-    walkable: 1
-    walkSpeed: 1
+    walkable: 0
+    walkSpeed: 0
     pathingCost: 0
     maxHealth: 0
     safe: 0

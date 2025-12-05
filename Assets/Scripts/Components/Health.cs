@@ -9,14 +9,14 @@ public class Health : NetworkComponent
     UnityEvent BeforeDeath;
     UnityEvent AfterDeath;
 
-    
+
     private void Start()
     {
         if (BeforeDeath == null)
         {
             BeforeDeath = new UnityEvent();
         }
-            
+
         if (AfterDeath == null)
         {
             AfterDeath = new UnityEvent();
@@ -39,37 +39,36 @@ public class Health : NetworkComponent
     // Update is called once per frame
     void Update()
     {
-        if(HP.Value == 0)
+        if (HP.Value == 0)
         {
             Kill();
         }
     }
 
-    void ChangeHealth(int change)
+    public void ChangeHealth(int change)
     {
-        HP.Value += change; 
+        HP.Value += change;
     }
-    void ChangeMaxHealth(int change)
+    public void ChangeMaxHealth(int change)
     {
         MaxHP.Value += change;
     }
     void Kill()
     {
-        
-
         if (IsClient && !IsServer)
         {
             GameObject.Destroy(gameObject);
         }
         SubmitKillServerRpc();
     }
-    
+
     void BeforeDeaths()
     {
         Debug.Log("I'm Dying");
     }
 
-    void AfterDeaths() {
+    void AfterDeaths()
+    {
         Debug.Log("I'm Dead, anything else you want to finish?");
     }
 
