@@ -31,5 +31,6 @@ public class Enemy : NetworkEntity
         if (!IsServer) return;
 
        ((Movement)NetworkComponents["Movement"]).Direction = ((Behavior)NetworkComponents["Behavior"]).NextMove();
+       ((Tool)NetworkComponents["Tool"]).Use(this);
     }
 }

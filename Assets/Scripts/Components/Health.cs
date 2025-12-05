@@ -28,8 +28,8 @@ public class Health : NetworkComponent
 
     public override void OnNetworkSpawn()
     {
-        HP.OnValueChanged += SyncHP;
-        MaxHP.OnValueChanged += SyncMaxHP;
+        
+        
     }
     void Awake()
     {
@@ -39,7 +39,7 @@ public class Health : NetworkComponent
     // Update is called once per frame
     void Update()
     {
-        if (HP.Value == 0)
+        if (HP.Value <= 0)
         {
             Kill();
         }
@@ -55,10 +55,6 @@ public class Health : NetworkComponent
     }
     void Kill()
     {
-        if (IsClient && !IsServer)
-        {
-            GameObject.Destroy(gameObject);
-        }
         SubmitKillServerRpc();
     }
 
@@ -75,15 +71,6 @@ public class Health : NetworkComponent
     [ServerRpc]
     public void SubmitKillServerRpc()
     {
-        GameObject.Destroy(gameObject);
-    }
-
-    private void SyncHP(int prev, int curr)
-    {
-        HP.Value = curr;
-    }
-    private void SyncMaxHP(int prev, int curr)
-    {
-        MaxHP.Value = curr;
+        Destroy(gameObject);
     }
 }

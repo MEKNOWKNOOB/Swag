@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2960393494
+  GlobalObjectIdHash: 2428643919
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -482,6 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalPlayer
   ShowTopMostFoldoutHeaderGroup: 1
+  Direction: {x: 0, y: 0}
   Name: 
   transform: {fileID: 72106426734049158}
 --- !u!114 &7429622913296973390
@@ -525,9 +526,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   ShowTopMostFoldoutHeaderGroup: 1
   HP:
-    m_InternalValue: 15
+    m_InternalValue: 15000
   MaxHP:
-    m_InternalValue: 15
+    m_InternalValue: 15000
 --- !u!1001 &2293596243517798754
 PrefabInstance:
   m_ObjectHideFlags: 0
