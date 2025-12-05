@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320943f467f1a60428f1861d6133f00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  menuCanvas: {fileID: 70490404}
 --- !u!1 &145129702
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,5 +953,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 283933228}
-  - {fileID: 70490408}
   - {fileID: 610546141}
+  - {fileID: 70490408}
