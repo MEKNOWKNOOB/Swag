@@ -37,6 +37,18 @@ public class GameManager : NetworkEntity
         OnPlayerAdded?.Invoke(player);
     }
 
+    public LocalPlayer GetClientLocalPlayer()
+    {
+        foreach (LocalPlayer player in Players)
+        {
+            if (player.IsOwner)
+            {
+                return player;
+            }
+        }
+        return null;
+    }
+
     void Update()
     {
 
