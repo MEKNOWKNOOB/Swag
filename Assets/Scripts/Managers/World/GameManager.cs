@@ -9,7 +9,7 @@ public class GameManager : NetworkEntity
     [Header("GameManager")]
     public List<LocalPlayer> Players = new();
     public int Difficulty = 0;
-    public Vector3 RespawnPoint = Vector3.zero;
+    public Vector3 RespawnPoint = new Vector3(-10, -5, 0);
 
     public delegate void PlayerAddedHandler(LocalPlayer player);
 

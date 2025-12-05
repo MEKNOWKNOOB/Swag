@@ -13,6 +13,7 @@ public class LocalPlayer : NetworkEntity
 
     public override void OnNetworkSpawn()
     {
+        gameObject.transform.position = GameManager.Instance.RespawnPoint;
         if (IsOwner) return;
         GetComponentInChildren<Camera>().enabled = false;
         GetComponentInChildren<AudioListener>().enabled = false;

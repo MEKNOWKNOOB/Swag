@@ -39,3 +39,4 @@ MonoBehaviour:
     walkSpeed: 1
     pathingCost: 1
     maxHealth: 1
+    safe: 0
