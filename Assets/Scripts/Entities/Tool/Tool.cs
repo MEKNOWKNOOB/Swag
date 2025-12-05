@@ -19,4 +19,14 @@ public class Tool : NetworkComponent
     {
         ((Action)Entity.NetworkComponents["Action"]).Active(this, user);
     }
+
+    /// <summary>
+    /// Uses Tool
+    /// </summary>
+    /// <param name="user"> user is NOT the Item class, it's the actual User, Tool should work without an Item class as long its part of an Entity</param>
+    /// <param name="direction"> direction of use</param>
+    public void Use(NetworkEntity user, Vector2 direction)
+    {
+        ((Action)Entity.NetworkComponents["Action"]).Active(this, user, direction);
+    }
 }
